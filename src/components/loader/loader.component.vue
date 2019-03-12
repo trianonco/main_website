@@ -36,7 +36,8 @@ export default {
   z-index: 100;
 
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  max-height: 100vh;
   position: fixed;
   top: 0px;
   left: 0px;
