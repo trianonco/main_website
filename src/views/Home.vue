@@ -65,6 +65,10 @@ export default {
   data() {
     return {
       swiperOption: {
+        effect: "fade",
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false,
+        slidesPerView: 1,
         pagination: {
           el: ".swiper-pagination",
           clickable: true
