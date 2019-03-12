@@ -54,7 +54,11 @@ export default {
   },
   data() {
     return {
-      swiperOption: {}
+      swiperOption: {
+        pagination: {
+          el: ".swiper-pagination"
+        }
+      }
     };
   },
   computed: {
