@@ -2,7 +2,9 @@
   <div class="header">
     <div class="header-title">
       <img class="header-title-logo" src="../../assets/main-logo.png">
-      <div class="header-title-login">INICIAR SESIÓN</div>
+      <div class="header-title-login">
+        <router-link to="/login">INICIAR SESIÓN</router-link>
+      </div>
     </div>
     <div class="header-subtitle">LO MEJOR DE LA MARROQUINERÍA</div>
   </div>
@@ -23,6 +25,9 @@ export default {
   background-color: white;
   box-sizing: border-box;
   padding: 1em;
+  a {
+    text-decoration: none;
+  }
 }
 .header-title {
   display: block;
