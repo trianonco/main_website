@@ -41,6 +41,16 @@
   filter: blur(0);
   width: 100%;
 }
+.swiper-pagination-bullet-active {
+  background-color: rgba(100, 100, 100, 0.5) !important;
+}
+.swiper-pagination-bullet {
+  width: 1em !important;
+  height: 1em !important;
+
+  border: 2px solid rgba(100, 100, 100, 0.7) !important;
+  border-radius: 0em !important;
+}
 </style>
 
 <script>
