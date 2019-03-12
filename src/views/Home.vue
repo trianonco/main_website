@@ -4,13 +4,22 @@
     <swiper :options="swiperOption" ref="mySwiper">
       <!-- slides -->
       <swiper-slide>
-        <v-lazy-image src="../assets/Home-Slider/img1.png"/>
+        <v-lazy-image
+          src="https://cdn-images-1.medium.com/max/1600/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+          src-placeholder="https://cdn-images-1.medium.com/max/80/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+        />
       </swiper-slide>
       <swiper-slide>
-        <v-lazy-image src="../assets/Home-Slider/img2.png"/>
+        <v-lazy-image
+          src="https://cdn-images-1.medium.com/max/1600/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+          src-placeholder="https://cdn-images-1.medium.com/max/80/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+        />
       </swiper-slide>
       <swiper-slide>
-        <v-lazy-image src="../assets/Home-Slider/img3.png"/>
+        <v-lazy-image
+          src="https://cdn-images-1.medium.com/max/1600/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+          src-placeholder="https://cdn-images-1.medium.com/max/80/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+        />
       </swiper-slide>
 
       <!-- Optional controls -->
@@ -25,8 +34,8 @@
 .v-lazy-image {
   filter: blur(10px);
   transition: filter 0.7s;
-  width: 500px;
-  height: 100px;
+  width: 100%;
+  height: auto;
 }
 .v-lazy-image-loaded {
   filter: blur(0);
