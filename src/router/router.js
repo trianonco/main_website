@@ -30,6 +30,36 @@ export default new Router({
     }
     ,
     {
+      path: 'genero/men',
+      name: 'men',
+      component: Home
+    }
+    ,
+    {
+      path: 'genero/women',
+      name: 'women',
+      component: Home
+    }
+    ,
+    {
+      path: '/categories',
+      name: 'categories',
+      component: Home
+    },
+    {
+      path: '/category/:categoryName',
+      name: 'category:categoryName',
+      component: Home
+    }
+    ,
+    {
+      path: '/',
+      name: 'settings',
+      component: Home
+    }
+    ,
+    ,
+    {
       path: '/product/:id',
       name: 'product',
       component: Home
@@ -37,7 +67,7 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      component: () => import('./../views/About.vue')
+      component: () => import('./../views/Home.vue')
     }
   ]
 })
