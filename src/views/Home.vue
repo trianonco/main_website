@@ -5,20 +5,20 @@
       <!-- slides -->
       <swiper-slide>
         <v-lazy-image
-          src="https://cdn-images-1.medium.com/max/1600/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
-          src-placeholder="https://cdn-images-1.medium.com/max/80/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+          :src="require('../assets/Home-Slider/img1.png')"
+          :src-placeholder="require('../assets/Home-Slider/img1-placeholder.jpg')"
         />
       </swiper-slide>
       <swiper-slide>
         <v-lazy-image
-          src="https://cdn-images-1.medium.com/max/1600/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
-          src-placeholder="https://cdn-images-1.medium.com/max/80/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+          :src="require('../assets/Home-Slider/img2.png')"
+          :src-placeholder="require('../assets/Home-Slider/img2-placeholder.jpg')"
         />
       </swiper-slide>
       <swiper-slide>
         <v-lazy-image
-          src="https://cdn-images-1.medium.com/max/1600/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
-          src-placeholder="https://cdn-images-1.medium.com/max/80/1*xjGrvQSXvj72W4zD6IWzfg.jpeg"
+          :src="require('../assets/Home-Slider/img3.png')"
+          :src-placeholder="require('../assets/Home-Slider/img3-placeholder.jpg')"
         />
       </swiper-slide>
 
