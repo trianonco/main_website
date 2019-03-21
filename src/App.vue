@@ -34,7 +34,7 @@ body {
   margin: 0;
   overflow-y: scroll;
   width: 100vw;
-  height: 100vh;
+  height: auto;
 
   @media not all and (hover: hover) {
     height: var(--app-height);
@@ -48,7 +48,7 @@ body {
   color: #2c3e50;
   display: block;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   position: fixed;
   top: 0px;
   left: 0px;

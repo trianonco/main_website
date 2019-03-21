@@ -16,5 +16,10 @@ export default {
 .SearchBarComponent {
   width: 100%;
   height: @size-search-bar-height;
+  background-color: black;
+  color: #fff;
+  h1 {
+    font-size: 20px;
+  }
 }
 </style>
