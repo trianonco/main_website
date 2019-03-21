@@ -1,3 +1,38 @@
+<script>
+// @ is an alias to /src
+import HeaderComponent from "../components/header/header.component";
+import GenderButtonsComponent from "../components/gender-buttons/gender-buttons.component";
+
+export default {
+  name: "HomeView",
+  components: {
+    HeaderComponent,
+    GenderButtonsComponent
+  },
+  data() {
+    return {
+      swiperOption: {
+        effect: "fade",
+        autoplay: {
+          delay: 5000
+        },
+        slidesPerView: 1,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        }
+      }
+    };
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper;
+    }
+  },
+  mounted() {}
+};
+</script>
+
 <template>
   <div class="view">
     <header-component/>
@@ -26,9 +61,12 @@
       <div class="swiper-pagination" slot="pagination"></div>
       <div class="swiper-scrollbar" slot="scrollbar"></div>
     </swiper>
-  </div>
-</template>
 
+    <GenderButtonsComponent/>
+
+    <SearchBarComponent>
+       </div>
+</template>
 
 <style>
 .v-lazy-image {
@@ -52,36 +90,3 @@
   border-radius: 0em !important;
 }
 </style>
-
-<script>
-// @ is an alias to /src
-import HeaderComponent from "../components/header/header.component";
-
-export default {
-  name: "HomeView",
-  components: {
-    HeaderComponent
-  },
-  data() {
-    return {
-      swiperOption: {
-        effect: "fade",
-        autoplay: 2500,
-        autoplayDisableOnInteraction: false,
-        slidesPerView: 1,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true
-        }
-      }
-    };
-  },
-  computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper;
-    }
-  },
-  mounted() {}
-};
-</script>
-
