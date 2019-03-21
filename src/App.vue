@@ -32,7 +32,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  overflow-y: scroll;
   width: 100vw;
   height: 100vh;
 

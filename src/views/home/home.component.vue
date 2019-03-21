@@ -41,7 +41,7 @@ export default {
     <header-component/>
 
     <!-- HomeSwiper -->
-    <div class="swiper-home">MY SWIPER</div>
+    <div class="swiper-home">MY SWIPER *</div>
     <!--  Gender Buttons -->
     <GenderButtonsComponent/>
 
