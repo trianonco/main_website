@@ -55,19 +55,26 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="less">
+<style lang="less">
 @import (reference) "./../../styles/index.less";
-
+.HomeSwiperComponent {
+  width: 100%;
+  height: @size-swiper-home-height;
+}
 .v-lazy-image {
   filter: blur(10px);
   transition: filter 0.7s;
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  object-fit: cover;
+  object-position: center;
+  height: @size-swiper-home-height;
 }
 .v-lazy-image-loaded {
   filter: blur(0);
-  width: 100%;
+  width: 100vw;
+  object-fit: cover;
+  object-position: center;
+  height: @size-swiper-home-height;
 }
 .swiper-pagination-bullet-active {
   background-color: rgba(100, 100, 100, 0.5) !important;

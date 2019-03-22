@@ -3,58 +3,76 @@
 import HeaderComponent from "../../components/header/header.component";
 import GenderButtonsComponent from "../../components/gender-buttons/gender-buttons.component";
 import SearchBarComponent from "../../components/search/search.component";
+import HomeSwiperComponent from "../../components/home-swiper/home-swiper.component";
+
+// Banner
+import BannerAuthorizedDistributorsComponent from "../../components/home-banners/banner-authorized-distributors.component";
+import BannerAuthorizedShopsComponent from "../../components/home-banners/banner-authorized-shops.component";
+import BannerAboutUsComponent from "../../components/home-banners/banner-about-us.component";
+import BannerCreditCardsComponent from "../../components/home-banners/banner-credit-cards.component";
+import BannerFreeShippingComponent from "../../components/home-banners/banner-free-shipping.component";
+import BannerGuaranteeComponent from "../../components/home-banners/banner-guarantee.component";
+import BannerAddressComponent from "../../components/home-banners/banner-address.component";
+
+// Footer
+import FooterComponent from "../../components/footer/footer.component";
 
 export default {
   name: "HomeView",
   components: {
     HeaderComponent,
     GenderButtonsComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    HomeSwiperComponent,
+    BannerAuthorizedDistributorsComponent,
+    BannerAuthorizedShopsComponent,
+    BannerAboutUsComponent,
+    BannerCreditCardsComponent,
+    BannerFreeShippingComponent,
+    BannerGuaranteeComponent,
+    BannerAddressComponent,
+    FooterComponent
   },
   data() {
-    return {
-      swiperOption: {
-        effect: "fade",
-        autoplay: {
-          delay: 5000
-        },
-        slidesPerView: 1,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true
-        }
-      }
-    };
+    return {};
   },
-  computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper;
-    }
-  },
+  computed: {},
   mounted() {}
 };
 </script>
 
 <template>
-  <div class="view">
-    <!-- Header & Navbar -->
-    <header-component/>
+  <div class="view home">
+    <!-- Home :: Begin -->
+    <div class="wrapper">
+      <!-- Header & Navbar -->
+      <header-component/>
 
-    <!-- HomeSwiper -->
-    <div class="swiper-home">MY SWIPER *</div>
-    <!--  Gender Buttons -->
-    <GenderButtonsComponent/>
+      <!-- HomeSwiper -->
+      <HomeSwiperComponent/>
 
-    <!-- SearchBar & Chat  -->
-    <SearchBarComponent></SearchBarComponent>
+      <!--  Gender Buttons -->
+      <GenderButtonsComponent/>
+
+      <!-- SearchBar & Chat  -->
+      <SearchBarComponent></SearchBarComponent>
+
+      <!-- Banners  -->
+      <BannerAuthorizedDistributorsComponent/>
+      <BannerAuthorizedShopsComponent/>
+      <BannerAboutUsComponent/>
+      <BannerCreditCardsComponent/>
+      <BannerFreeShippingComponent/>
+      <BannerGuaranteeComponent/>
+      <BannerAddressComponent/>
+
+      <!-- Footers -->
+      <FooterComponent/>
+    </div>
+    <!-- Home :: End  -->
   </div>
 </template>
 
 <style lang="less">
 @import (reference) "./../../styles/index.less";
-.swiper-home {
-  background-color: rebeccapurple;
-  width: 100%;
-  height: @size-swiper-home-height;
-}
 </style>
