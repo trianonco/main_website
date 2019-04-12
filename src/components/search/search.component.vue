@@ -67,11 +67,12 @@ export default {
     font-size: 1.1em;
     letter-spacing: 0.1em;
     width: 10em;
+    font-family: "TrajanPro";
   }
 }
 .chat {
   position: absolute;
-  top: 0.65em;
+  top: 2vh;
   right: 0.75em;
   img {
     width: 2.25em;

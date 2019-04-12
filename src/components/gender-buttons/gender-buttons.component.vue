@@ -17,6 +17,8 @@
   height: @size-gender-buttons-height;
   background-color: white;
 
+  font-family: "TrajanPro";
+
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -90,6 +92,8 @@
 
   background-color: white;
   box-sizing: border-box;
+
+  font-size: 0.9em;
 }
 </style>
 
