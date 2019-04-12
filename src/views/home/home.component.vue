@@ -64,7 +64,6 @@ export default {
       <SearchBarComponent></SearchBarComponent>
 
       <!-- Banners  -->
-      <BannerAuthorizedDistributarssComponent/>
       <BannerAuthorizedDistributorsComponent/>
       <BannerAuthorizedShopsComponent/>
       <BannerAboutUsComponent/>
