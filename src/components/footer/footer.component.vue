@@ -1,6 +1,8 @@
 <template>
   <footer class="footer">
-    <h1>FOOTER</h1>
+    <div class="title">SÍGUENOS EN NUESTRAS REDES SOCIALES</div>
+    <div class="networks"></div>
+    <div class="trianon-logo"></div>
   </footer>
 </template>
 

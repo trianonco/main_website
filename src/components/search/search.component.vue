@@ -68,6 +68,7 @@ export default {
     letter-spacing: 0.1em;
     width: 10em;
     font-family: "TrajanPro";
+    width: 65vw;
   }
 }
 .chat {

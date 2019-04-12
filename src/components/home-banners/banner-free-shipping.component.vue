@@ -1,5 +1,23 @@
+
+
 <template>
-  <div class="hello">AuthorizedDistributors</div>
+  <div class="banner free shipping">
+    <div class="pic-bg">
+      <br>
+      <h2>MEDIOS DE ENVIO</h2>
+      <h3>
+        !Envíos Gratis!
+        <br>POR COMPRAS SUPERIORES A $100.000 COP
+        <br>
+        <span>valido solo para colombia</span>
+      </h3>
+      <h4>Costo de envío a nivel nacional : $8.000 COP</h4>
+      <h4>Costo de envío a nivel internacional: $10 USD</h4>
+    </div>
+    <div class="gold-bg">
+      <div class="message">COMPRAS INTERNACIONALES</div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -10,4 +28,64 @@ export default {
 </script>
 
 <style lang="less">
+@import (reference) "../../styles/index.less";
+.banner.free.shipping {
+  display: block;
+  width: 100%;
+  padding: 0em;
+  box-sizing: border-box;
+  background-color: white;
+
+  div.pic-bg {
+    background-color: black;
+    background-image: url("../../assets/free-shipping-bg.png");
+    background-size: cover;
+    color: white;
+    display: block;
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+  }
+  div.gold-bg {
+    background-color: #dfcc8d;
+    background-image: url("../../assets/free-shipping-gold.png");
+    background-size: cover;
+    color: white;
+    display: block;
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    .message {
+      background-color: black;
+      color: white;
+      font-family: "TrajanPro";
+      font-size: 0.85em;
+      padding: 1em;
+      text-transform: uppercase;
+    }
+  }
+  h2 {
+    font-family: "TrajanPro";
+    font-size: 0.85em;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-family: "Open Sans";
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9em;
+    span {
+      font-size: 0.85em;
+      padding-top: 0.25em;
+      font-weight: lighter;
+    }
+  }
+  h4 {
+    font-family: "Open Sans";
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin: 0px;
+    padding: 0px;
+  }
+}
 </style>

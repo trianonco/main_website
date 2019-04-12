@@ -37,7 +37,13 @@ export default {
     return {};
   },
   computed: {},
-  mounted() {}
+  mounted() {
+    this.$getLocation().then(coordinates => {
+      alert(
+        "Welcome From " + JSON.stringify(coordinates) + " => BOGOTÁ, COLOMBIA"
+      );
+    });
+  }
 };
 </script>
 
@@ -58,6 +64,7 @@ export default {
       <SearchBarComponent></SearchBarComponent>
 
       <!-- Banners  -->
+      <BannerAuthorizedDistributarssComponent/>
       <BannerAuthorizedDistributorsComponent/>
       <BannerAuthorizedShopsComponent/>
       <BannerAboutUsComponent/>

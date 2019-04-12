@@ -9,7 +9,8 @@ import { VLazyImagePlugin } from "v-lazy-image";
 
 import './service-workers/registerServiceWorker'
 
-
+import VueGeolocation from 'vue-browser-geolocation';
+Vue.use(VueGeolocation);
 
 Vue.config.productionTip = false
 
