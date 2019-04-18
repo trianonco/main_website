@@ -1,5 +1,6 @@
 <script>
-
+// Firebase
+import firebase from "firebase";
 // Vuex Store
 import store from "./../../store/store.js";
 
@@ -43,43 +44,59 @@ export default {
   },
 
   computed: {
-    user () {
-	    return store.state.user
+    user() {
+      return store.state.user;
     }
   },
 
-  methods:{
-     updateUser () {
-      store.dispatch('updateUser',{});
-     }
+  methods: {
+    updateUser() {
+      store.dispatch("updateUser", {});
+    },
+
+    initMessage() {
+      const messaging = firebase.messaging();
+      console.warn(messaging);
+      messaging
+        .requestPermission()
+        .then(response => {
+          messaging
+            .getToken()
+            .then(token => {
+              console.log("token do usuário:", token);
+            })
+            .catch(error => {
+              console.error(error);
+            });
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
   },
 
   mounted() {
-    this.$getLocation().then(coordinates => {});
-
+    //this.$getLocation().then(coordinates => {});
+    this.initMessage();
   }
 };
 </script>
 
 <template>
   <div class="view home">
-
     <!-- Home :: Begin -->
     <div class="wrapper">
-
       <!-- Header & Navbar -->
       <headerComponent/>
 
-      <h1 @click="updateUser()"> CLICK TO UPDATE USER</h1>
+      <h1 @click="updateUser()">CLICK TO UPDATE USER</h1>
 
-      <h1> {{ user }} </h1>
+      <h1>{{ user }}</h1>
 
       <!-- Footers -->
       <FooterComponent/>
-
     </div>
     <!-- ------------- -->
-
   </div>
 </template>
 
