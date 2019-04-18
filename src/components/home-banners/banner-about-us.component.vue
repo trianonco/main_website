@@ -17,6 +17,7 @@ export default {
 
 <style lang="less">
 @import (reference) "../../styles/index.less";
+/*
 .banner.about.us {
   display: block;
   width: 100%;
@@ -54,4 +55,5 @@ export default {
     }
   }
 }
+*/
 </style>

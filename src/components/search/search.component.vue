@@ -19,6 +19,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @import (reference) "./../../styles/index.less";
+/*
 .search-bar-and-chat {
   width: 100%;
   height: @size-search-bar-height;
@@ -72,11 +73,12 @@ export default {
   }
 }
 .chat {
-  position: absolute;
-  top: 2vh;
+  position: fixed;
+  bottom: 2vh;
   right: 0.75em;
   img {
     width: 2.25em;
   }
 }
+*/
 </style>

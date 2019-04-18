@@ -29,6 +29,7 @@ export default {
 
 <style lang="less">
 @import (reference) "../../styles/index.less";
+/*
 .banner.free.shipping {
   display: block;
   width: 100%;
@@ -88,4 +89,5 @@ export default {
     padding: 0px;
   }
 }
+*/
 </style>

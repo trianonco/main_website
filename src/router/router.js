@@ -31,13 +31,13 @@ export default new Router({
     }
     ,
     {
-      path: 'genero/men',
+      path: 'gender/men',
       name: 'men',
       component: Home
     }
     ,
     {
-      path: 'genero/women',
+      path: 'gender/women',
       name: 'women',
       component: Home
     }

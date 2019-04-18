@@ -30,6 +30,7 @@ export default {
 
 <style lang="less">
 @import (reference) "../../styles/index.less";
+/*
 .banner.address {
   display: block;
   width: 100%;
@@ -38,11 +39,13 @@ export default {
   box-sizing: border-box;
   background-color: black;
   background-image: url("../../assets/address-bg.png");
+  background-size: contain;
+  background-position: center;
 
   color: white;
 
   .links {
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 0.9em;
     width: 90%;
@@ -100,4 +103,5 @@ export default {
     }
   }
 }
+*/
 </style>

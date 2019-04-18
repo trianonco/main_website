@@ -1,9 +1,9 @@
 <template>
   <div class="gender-buttons">
-    <div class="gender-button male">
+    <div class="gender-button female" @click="goToCategory('FEMALE')">
       <div class="wrapper">MUJER</div>
     </div>
-    <div class="gender-button female">
+    <div class="gender-button male" @click="goToCategory('MALE')">
       <div class="wrapper">HOMBRE</div>
     </div>
   </div>
@@ -12,6 +12,7 @@
 
 <style lang="less">
 @import (reference) "./../../styles/index.less";
+/*
 .gender-buttons {
   width: 100%;
   height: @size-gender-buttons-height;
@@ -95,6 +96,7 @@
 
   font-size: 0.9em;
 }
+*/
 </style>
 
 <script>

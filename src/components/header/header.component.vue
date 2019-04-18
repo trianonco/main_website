@@ -19,15 +19,22 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @import (reference) "./../../styles/index.less";
+/*
 .header {
   display: block;
   width: 100%;
   height: @size-header-height;
-  position: relative;
-  width: 100%;
-  background-color: white;
+
   box-sizing: border-box;
   padding: 0.25em;
+  margin: 0px;
+
+  position: relative;
+  top: 0px;
+  left: 0px;
+
+  background-color: @color-white;
+
   a {
     text-decoration: none;
   }
@@ -54,4 +61,5 @@ export default {
     font-size: 0.75em;
   }
 }
+*/
 </style>

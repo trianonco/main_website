@@ -19,6 +19,7 @@ export default {
 
 <style lang="less">
 @import (reference) "../../styles/index.less";
+/*
 .banner.credit.cards {
   display: block;
   width: 100%;
@@ -55,4 +56,5 @@ export default {
   p {
   }
 }
+*/
 </style>

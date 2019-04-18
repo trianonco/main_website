@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div class="view-loader" :class="{ active: UI.isLoading , loaded : UI.isLoaded }">
+    <div class="view-loader" :class="{ loaded : UI.isLoading }" v-if="!UI.isLoaded">
       <img src="../../assets/main-logo.png">
     </div>
   </transition>
@@ -14,8 +14,8 @@ export default {
       this.UI.isLoading = true;
       setTimeout(() => {
         this.UI.isLoaded = true;
-      }, 3500);
-    }, 500);
+      }, 1000);
+    }, 1000);
   },
   data() {
     return {
@@ -62,30 +62,20 @@ export default {
   -ms-flex-align: center;
   align-items: center;
 
-  -webkit-transition: top 1000ms ease-in-out;
-  -moz-transition: top 1000ms ease-in-out;
-  -ms-transition: top 1000ms ease-in-out;
-  -o-transition: top 1000ms ease-in-out;
-  transition: top 1000ms ease-in-out;
+  -webkit-transition: all 1000ms ease-in-out;
+  -moz-transition: all 1000ms ease-in-out;
+  -ms-transition: all 1000ms ease-in-out;
+  -o-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out;
 
   img {
     width: 50vw;
-    opacity: 0;
-    -webkit-transition: all 3500ms ease-in-out;
-    -moz-transition: all 3500ms ease-in-out;
-    -ms-transition: all 3500ms ease-in-out;
-    -o-transition: all 3500ms ease-in-out;
-    transition: all 3500ms ease-in-out;
+    opacity: 1;
   }
 
-  &.active {
-    img {
-      width: 50vw;
-      opacity: 1;
-    }
-  }
+  opacity: 1;
   &.loaded {
-    top: -100vh;
+    opacity: 0;
   }
 }
 </style>

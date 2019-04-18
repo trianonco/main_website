@@ -1,4 +1,8 @@
 <script>
+
+// Vuex Store
+import store from "./../../store/store.js";
+
 // @ is an alias to /src
 import HeaderComponent from "../../components/header/header.component";
 import GenderButtonsComponent from "../../components/gender-buttons/gender-buttons.component";
@@ -33,52 +37,52 @@ export default {
     BannerAddressComponent,
     FooterComponent
   },
+
   data() {
     return {};
   },
-  computed: {},
+
+  computed: {
+    user () {
+	    return store.state.user
+    }
+  },
+
+  methods:{
+     updateUser () {
+      store.dispatch('updateUser',{});
+     }
+  },
+
   mounted() {
-    this.$getLocation().then(coordinates => {
-      alert(
-        "Welcome From " + JSON.stringify(coordinates) + " => BOGOTÁ, COLOMBIA"
-      );
-    });
+    this.$getLocation().then(coordinates => {});
+
   }
 };
 </script>
 
 <template>
   <div class="view home">
+
     <!-- Home :: Begin -->
     <div class="wrapper">
+
       <!-- Header & Navbar -->
-      <header-component/>
+      <headerComponent/>
 
-      <!-- HomeSwiper -->
-      <HomeSwiperComponent/>
+      <h1 @click="updateUser()"> CLICK TO UPDATE USER</h1>
 
-      <!--  Gender Buttons -->
-      <GenderButtonsComponent/>
-
-      <!-- SearchBar & Chat  -->
-      <SearchBarComponent></SearchBarComponent>
-
-      <!-- Banners  -->
-      <BannerAuthorizedDistributorsComponent/>
-      <BannerAuthorizedShopsComponent/>
-      <BannerAboutUsComponent/>
-      <BannerCreditCardsComponent/>
-      <BannerFreeShippingComponent/>
-      <BannerGuaranteeComponent/>
-      <BannerAddressComponent/>
+      <h1> {{ user }} </h1>
 
       <!-- Footers -->
       <FooterComponent/>
+
     </div>
-    <!-- Home :: End  -->
+    <!-- ------------- -->
+
   </div>
 </template>
 
 <style lang="less">
-@import (reference) "./../../styles/index.less";
+@import (reference) "../../styles/index.less";
 </style>

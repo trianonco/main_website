@@ -23,6 +23,7 @@ export default {
 
 <style lang="less">
 @import (reference) "../../styles/index.less";
+/*
 .banner.authorized.shops {
   display: block;
   width: 100%;
@@ -50,4 +51,5 @@ export default {
     }
   }
 }
+*/
 </style>

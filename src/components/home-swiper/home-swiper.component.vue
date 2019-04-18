@@ -57,6 +57,7 @@ export default {
 
 <style lang="less">
 @import (reference) "./../../styles/index.less";
+/*
 .HomeSwiperComponent {
   width: 100%;
   height: @size-swiper-home-height;
@@ -86,4 +87,5 @@ export default {
   border: 2px solid rgba(100, 100, 100, 0.7) !important;
   border-radius: 0em !important;
 }
+*/
 </style>

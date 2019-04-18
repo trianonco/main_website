@@ -24,6 +24,7 @@ export default {
 
 <style lang="less">
 @import (reference) "../../styles/index.less";
+/*
 .banner.guarantee {
   display: block;
   width: 100%;
@@ -50,4 +51,5 @@ export default {
     margin: 0 auto;
   }
 }
+*/
 </style>
