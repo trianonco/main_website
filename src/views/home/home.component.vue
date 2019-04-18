@@ -78,6 +78,8 @@ export default {
   mounted() {
     //this.$getLocation().then(coordinates => {});
     this.initMessage();
+    this.$ga.page("/home");
+    this.$$analytics.fbq('track', 'PageView');
   }
 };
 </script>
