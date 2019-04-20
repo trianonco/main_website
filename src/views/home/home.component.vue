@@ -1,31 +1,43 @@
 <script>
 // Firebase
-import firebase from "firebase";
+//import firebase from "firebase";
+
 // Vuex Store
 import store from "./../../store/store.js";
 
-// @ is an alias to /src
-import HeaderComponent from "../../components/header/header.component";
-import GenderButtonsComponent from "../../components/gender-buttons/gender-buttons.component";
-import SearchBarComponent from "../../components/search/search.component";
-import HomeSwiperComponent from "../../components/home-swiper/home-swiper.component";
+// Meta Tags
+import metaTags from "./meta-tags.json";
 
-// Banner
-import BannerAuthorizedDistributorsComponent from "../../components/home-banners/banner-authorized-distributors.component";
-import BannerAuthorizedShopsComponent from "../../components/home-banners/banner-authorized-shops.component";
-import BannerAboutUsComponent from "../../components/home-banners/banner-about-us.component";
-import BannerCreditCardsComponent from "../../components/home-banners/banner-credit-cards.component";
-import BannerFreeShippingComponent from "../../components/home-banners/banner-free-shipping.component";
-import BannerGuaranteeComponent from "../../components/home-banners/banner-guarantee.component";
-import BannerAddressComponent from "../../components/home-banners/banner-address.component";
+// Shared
+import HeaderComponent from "../../components/shared/header/header.component";
+import FooterComponent from "../../components/shared/footer/footer.component";
 
-// Footer
-import FooterComponent from "../../components/footer/footer.component";
+// Home Components
+/*
+import GenderButtonsComponent from "../../components/home/home-gender-buttons/gender-buttons.component";
+import SearchBarComponent from "../../components/home/search/home-search.component";
+import HomeSwiperComponent from "../../components/home/home-swiper/home-swiper.component";
+
+// Banners Components
+import BannerAuthorizedDistributorsComponent from "../../components/home/home-banners/banner-authorized-distributors.component";
+import BannerAuthorizedShopsComponent from "../../components/home/home-banners/banner-authorized-shops.component";
+import BannerAboutUsComponent from "../../components/home/home-banners/banner-about-us.component";
+import BannerCreditCardsComponent from "../../components/home/home-banners/banner-credit-cards.component";
+import BannerFreeShippingComponent from "../../components/home/home-banners/banner-free-shipping.component";
+import BannerGuaranteeComponent from "../../components/home/home-banners/banner-guarantee.component";
+import BannerAddressComponent from "../../components/home/home-banners/banner-address.component";
+*/
 
 export default {
   name: "HomeView",
+
+  // metaInfo: metaTags.metaInfo,
+
   components: {
     HeaderComponent,
+    FooterComponent
+
+    /*
     GenderButtonsComponent,
     SearchBarComponent,
     HomeSwiperComponent,
@@ -36,7 +48,7 @@ export default {
     BannerFreeShippingComponent,
     BannerGuaranteeComponent,
     BannerAddressComponent,
-    FooterComponent
+    */
   },
 
   data() {
@@ -45,41 +57,20 @@ export default {
 
   computed: {
     user() {
-      return store.state.user;
+      //return store.state.user;
     }
   },
 
   methods: {
     updateUser() {
-      store.dispatch("updateUser", {});
-    },
-
-    initMessage() {
-      const messaging = firebase.messaging();
-      console.warn(messaging);
-      messaging
-        .requestPermission()
-        .then(response => {
-          messaging
-            .getToken()
-            .then(token => {
-              console.log("token do usuário:", token);
-            })
-            .catch(error => {
-              console.error(error);
-            });
-        })
-        .catch(error => {
-          console.error(error);
-        });
+      //store.dispatch("updateUser", {});
     }
   },
 
   mounted() {
     //this.$getLocation().then(coordinates => {});
-    this.initMessage();
-    this.$ga.page("/home");
-    this.$$analytics.fbq('track', 'PageView');
+    //this.$ga.page("/home");
+    //this.$analytics.fbq('track', 'PageView');
   }
 };
 </script>
@@ -88,12 +79,8 @@ export default {
   <div class="view home">
     <!-- Home :: Begin -->
     <div class="wrapper">
-      <!-- Header & Navbar -->
+      <!-- Header  -->
       <headerComponent/>
-
-      <h1 @click="updateUser()">CLICK TO UPDATE USER</h1>
-
-      <h1>{{ user }}</h1>
 
       <!-- Footers -->
       <FooterComponent/>

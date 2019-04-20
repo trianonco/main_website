@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Meta from 'vue-meta';
 import App from './App.vue'
 import router from './routes/router'
 import store from './store/store'
@@ -10,21 +11,23 @@ import 'firebase/functions';
 import 'firebase/messaging';
 import 'firebase/storage';
 
+
 // Vue Vendors & PlugIn
-import VLazyImagePlugin from "v-lazy-image";
+import VLazyImagePlugin from 'v-lazy-image';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import VueGeolocation from 'vue-browser-geolocation';
 import VueAnalytics from 'vue-analytics'
-import VueFacebookPixel from 'vue-analytics-facebook-pixel'
+// import VueFacebookPixel from 'vue-analytics-facebook-pixel'
 
 import 'swiper/dist/css/swiper.css'
 import './service-workers/registerServiceWorker'
 
 // Vue Install Plug Ins
+Vue.use(Meta);
 Vue.use(VueGeolocation);
 Vue.use(VueAwesomeSwiper)
 Vue.use(VLazyImagePlugin);
-Vue.use(VueFacebookPixel);
+//Vue.use(VueFacebookPixel);
 Vue.use(VueAnalytics, {
   id: 'UA-138600827-1'
 })
@@ -46,13 +49,15 @@ firebase.initializeApp(config);
 
 
 // Init Facebook Pixel
+/*
 Vue.analytics.fbq.init('984344015003425', {
   em: 'user@mail.com'
 });
+*/
 
 console.clear();
 console.log('');
-console.group();
+console.group(' Trianon PWA Welcome ! ');
 console.warn('  --------------------------------------------- ');
 console.warn(' |                                             |');
 console.warn(' |            TRIANON PWA APP                  |');

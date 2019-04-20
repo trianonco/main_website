@@ -1,16 +1,29 @@
 <script>
-import RouterLoading from "./components/loader/loader.component";
+
+//import setAutoHeight from './scripts/height.js'
+
+import RouterLoading from "./components/shared/loader/loader.component";
+
 export default {
   components: {
     RouterLoading
   },
+
+  methods: {
+
+    initHeight(){
+      //setAutoHeight();
+    },
+
+    initUserSession(){
+
+    }
+  },
+
+
   mounted() {
-    const doc = document.documentElement;
-    doc.style.setProperty("--app-height", `${window.innerHeight}px`);
-    window.addEventListener("resize", () => {
-      const doc = document.documentElement;
-      doc.style.setProperty("--app-height", `${window.innerHeight}px`);
-    });
+   this.initHeight();
+   this.initUserSession();
   }
 };
 </script>

@@ -1,3 +1,23 @@
+
+      <!-- HomeSwiper -->
+      <HomeSwiperComponent/>
+
+      <!--  Gender Buttons -->
+      <GenderButtonsComponent/>
+
+      <!-- SearchBar & Chat  -->
+      <SearchBarComponent></SearchBarComponent>
+
+      <!-- Banners  -->
+      <BannerAuthorizedDistributorsComponent/>
+      <BannerAuthorizedShopsComponent/>
+      <BannerAboutUsComponent/>
+      <BannerCreditCardsComponent/>
+      <BannerFreeShippingComponent/>
+      <BannerGuaranteeComponent/>
+      <BannerAddressComponent/>
+
+
 <script>
 // @ is an alias to /src
 import HeaderComponent from "../components/header/header.component";
@@ -69,24 +89,3 @@ export default {
 </template>
 
 <style>
-.v-lazy-image {
-  filter: blur(10px);
-  transition: filter 0.7s;
-  width: 100%;
-  height: auto;
-}
-.v-lazy-image-loaded {
-  filter: blur(0);
-  width: 100%;
-}
-.swiper-pagination-bullet-active {
-  background-color: rgba(100, 100, 100, 0.5) !important;
-}
-.swiper-pagination-bullet {
-  width: 1em !important;
-  height: 1em !important;
-
-  border: 2px solid rgba(100, 100, 100, 0.7) !important;
-  border-radius: 0em !important;
-}
-</style>

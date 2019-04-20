@@ -47,9 +47,10 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="less">
+<style lang="less">
+@import (reference) "./../../../styles/index.less";
 .footer {
-  display: block;
+  display: none;
   width: 100%;
   background-color: black;
   color: white;

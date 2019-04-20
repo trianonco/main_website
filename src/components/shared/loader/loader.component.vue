@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <div class="view-loader" :class="{ loaded : UI.isLoading }" v-if="!UI.isLoaded">
-      <img src="../../assets/main-logo.png">
+      <img src="@/assets/main-logo.png">
     </div>
   </transition>
 </template>

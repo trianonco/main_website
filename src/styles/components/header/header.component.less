@@ -1,0 +1,108 @@
+// -------------------------------------------------- //
+// -- Header Component Styles ----------------------- //
+// -------------------------------------------------- //
+
+
+
+
+// ------------------------- //
+// -- Header --------------- //
+// ------------------------- //
+    #constructor-header(){
+
+        display: block;
+        
+        width: 100%;
+        height: 100px;
+
+        box-sizing: border-box;
+        padding: @2pm ;
+        margin: @0pm;
+
+        position: relative;
+        top: @0pm;
+        left: @0pm;
+
+        // Component Theme Styles : 
+        // @params [ '' , '' ]
+        #Theme-Light();
+
+    }
+// ------------------------- //
+
+
+
+
+
+
+// ------------------------- //
+// -- Header-Nav ----------- //
+// ------------------------- //
+    #constructor-header-nav(){
+
+        // Header Nav
+            display: block;
+            width: 100%;
+            height: auto;
+
+            box-sizing: border-box;
+            padding: @2pm ;
+            margin: @0pm;
+
+        // Font Styles : 
+        // @params [ 'normal' , 'bold' ]
+            #Font-OpenSans(); 
+
+        // Component Theme Styles : 
+        // @params [ '' , '' ]
+            #Theme-Light();
+
+        // Images 
+            .back{
+                width: 5px;
+            }
+            .profile{
+                width: 5px;
+            }
+    }
+// ------------------------- //
+
+
+
+
+
+
+
+// ------------------------- //
+// -- Header-Logo --------- //
+// ------------------------- //
+    #constructor-header-logo(){
+        .logo{
+            width: 5px;
+        }
+    }
+// ------------------------- //
+
+
+
+
+
+// ------------------------- //
+// -- Header-Title ------ //
+// ------------------------- //
+    #constructor-header-title(){
+
+        display: block;
+        width: 100%;
+        height: auto;
+
+        // Font Styles : 
+        // @params [ 'normal' , 'bold' ]
+        #Font-TrajanPro('bold');
+
+        // Component Theme Styles : 
+        // @params [ '' , '' ]
+        #Theme-Light();
+
+    }
+// ------------------------- //
