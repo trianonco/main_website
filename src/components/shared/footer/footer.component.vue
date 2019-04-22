@@ -61,7 +61,7 @@ export default {
   height: @10pm;
   margin: 0 auto;
 
-  z-index: 50;
+  z-index: 500;
 
   position: relative;
 

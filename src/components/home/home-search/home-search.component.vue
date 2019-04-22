@@ -1,9 +1,31 @@
 <template>
   <div class="search-bar-and-chat">
-    <div class="search-bar">
+    <div class="search-bar" @click="openSearchResults()">
       <img src="../../../assets/lupa-icon.png">
-      <input type="text" placeholder="BUSCAR">
+      <input type="text" placeholder="BUSCAR" v-model="searchKeyword">
     </div>
+
+    <div class="search-results" :class="getSearchResultsClass()">
+      <div class="close-button" @click="closeSearchResults()">x</div>
+      <h1>Sugerencias</h1>
+      <ul v-if="!searchKeyword">
+        <li v-for="item of default_results" v-bind:key="item.id">
+          <div v-if="isItemOnSearch(item)">
+            <img src="../../../assets/gender-categories/bullet-gray.png">
+            <h5>{{ item.description }}</h5>
+          </div>
+        </li>
+      </ul>
+      <ul v-if="searchKeyword">
+        <li v-for="item of results" v-bind:key="item.id">
+          <div v-if="isItemOnSearch(item)">
+            <img src="../../../assets/gender-categories/bullet-gray.png">
+            <h5>{{ item.description }}</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
+
     <div class="chat">
       <img src="./../../../assets/chat-icon.png">
     </div>
@@ -12,7 +34,56 @@
 
 <script>
 export default {
-  name: "HomeSearchBarComponent"
+  name: "HomeSearchBarComponent",
+  methods: {
+    isItemOnSearch(item) {
+      return (
+        item.description.includes(this.searchKeyword) ||
+        item.description
+          .toUpperCase()
+          .includes(this.searchKeyword.toUpperCase())
+      );
+    },
+    closeSearchResults() {
+      this.isClosed = true;
+    },
+    openSearchResults() {
+      this.isClosed = false;
+    },
+    getSearchResultsClass() {
+      if (this.isClosed) {
+        return "closed";
+      } else {
+        return "opened";
+      }
+    }
+  },
+  data() {
+    return {
+      isClosed: true,
+      searchKeyword: "",
+      default_results: [
+        { id: 0, description: "Billeteras Mujer", gender: ["FEMALE"] },
+        { id: 1, description: "Billeteras Hombre", gender: ["MALE"] },
+        { id: 2, description: "Bolsos y Maletines Mujer", gender: ["FEMALE"] },
+        { id: 3, description: "Bolsos y Maletines Homber", gender: ["MALE"] },
+        { id: 4, description: "Cinturones Mujer", gender: ["FEMALE"] },
+        { id: 5, description: "Cinturones Hombre", gender: ["MALE"] },
+        { id: 6, description: "LLaveros Mujer", gender: ["FEMALE"] },
+        { id: 7, description: "LLaveros Hombre", gender: ["MALE"] }
+      ],
+      results: [
+        { id: 0, description: "Billeteras Mujer", gender: ["FEMALE"] },
+        { id: 1, description: "Billeteras Hombre", gender: ["MALE"] },
+        { id: 2, description: "Bolsos y Maletines Mujer", gender: ["FEMALE"] },
+        { id: 3, description: "Bolsos y Maletines Homber", gender: ["MALE"] },
+        { id: 4, description: "Cinturones Mujer", gender: ["FEMALE"] },
+        { id: 5, description: "Cinturones Hombre", gender: ["MALE"] },
+        { id: 6, description: "LLaveros Mujer", gender: ["FEMALE"] },
+        { id: 7, description: "LLaveros Hombre", gender: ["MALE"] }
+      ]
+    };
+  }
 };
 </script>
 
@@ -22,18 +93,82 @@ export default {
 .search-bar-and-chat {
   height: @size-search-height;
   width: 100%;
-  z-index: 50;
-  overflow: hidden;
+
   background-color: black;
   color: #fff;
   position: relative;
+  z-index: 120;
   h1 {
     font-size: 20px;
   }
 }
 
+.search-results {
+  display: block;
+  width: 100%;
+  height: @size-home-search-content;
+
+  z-index: 100;
+
+  position: relative;
+
+  .close-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 0.5em;
+  }
+
+  &.closed {
+    top: 0px;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+  }
+  &.opened {
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    top: calc(
+      0px - @size-home-search-content - @size-search-height -
+        @size-gender-buttons-height
+    );
+
+    ul {
+    }
+    li {
+      display: block;
+      vertical-align: middle;
+      width: fit-content;
+      img {
+        display: inline-block;
+        width: 1em;
+        vertical-align: middle;
+        padding: 5px;
+      }
+      h5 {
+        display: inline-block;
+        vertical-align: middle;
+        width: fit-content;
+        padding: 5px;
+      }
+    }
+  }
+
+  background-color: white;
+  color: black;
+}
+
 .search-bar {
-  width: calc(100% - 2em);
+  position: relative;
+  z-index: 150;
+
+  width: 100%;
+  padding: 0em 2em;
   height: @size-search-height;
   margin: 0 auto;
   background-color: black;
@@ -78,6 +213,7 @@ export default {
   position: fixed;
   bottom: 2vh;
   right: 0.75em;
+  z-index: 1000;
   img {
     width: 2.25em;
   }
