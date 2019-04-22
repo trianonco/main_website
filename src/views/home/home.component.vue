@@ -109,7 +109,7 @@ div.view.home {
   width: 100%;
 
   div.view-wrapper {
-    height: 691px;
+    height: calc(@size-height-app + @size-footer-height);
     overflow: hidden;
   }
 }
