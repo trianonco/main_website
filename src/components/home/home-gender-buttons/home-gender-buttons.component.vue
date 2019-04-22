@@ -2,7 +2,7 @@
   <div class="gender-selector">
     <div class="gender-buttons">
       <div class="gender-button female" @click="openGenderContent('FEMALE')">
-        <div class="wrapper">MUJER</div>
+        <div class="wrapper">MUJER *</div>
       </div>
       <div class="gender-button male" @click="openGenderContent('MALE')">
         <div class="wrapper">HOMBRE</div>
