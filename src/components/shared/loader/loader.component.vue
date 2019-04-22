@@ -10,12 +10,25 @@
 export default {
   name: "RouterLoading",
   created() {
-    setTimeout(() => {
+    const isLoadedBefore = sessionStorage.getItem("isLoaded");
+    if (!isLoadedBefore) {
+      this.runLoader();
+      sessionStorage.setItem("isLoaded", JSON.stringify(true));
+    } else {
+      this.UI.isLoaded = true;
       this.UI.isLoading = true;
+    }
+  },
+
+  methods: {
+    runLoader() {
       setTimeout(() => {
-        this.UI.isLoaded = true;
+        this.UI.isLoading = true;
+        setTimeout(() => {
+          this.UI.isLoaded = true;
+        }, 1000);
       }, 1000);
-    }, 1000);
+    }
   },
   data() {
     return {

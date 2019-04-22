@@ -1,8 +1,8 @@
 <template>
-  <div class="view login">
+  <div class="view admin">
     <div class="wrapper">
       <HeaderComponent></HeaderComponent>
-      <h1>LOGIN</h1>
+      <h1>ADMIN</h1>
     </div>
   </div>
 </template>
@@ -11,9 +11,13 @@
 // @ is an alias to /src
 import HeaderComponent from "../../components/shared/header/header.component";
 export default {
-  name: "login",
+  name: "adminView",
   components: {
     HeaderComponent
+  },
+  mounted() {
+    const ref = firebase.storage().ref();
+    const file = document.querySelector("#photo").files[0];
   }
 };
 </script>

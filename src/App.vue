@@ -1,36 +1,26 @@
 <script>
-
-//import setAutoHeight from './scripts/height.js'
-
-import RouterLoading from "./components/shared/loader/loader.component";
-
+import setAutoHeight from "./scripts/height.js";
 export default {
-  components: {
-    RouterLoading
-  },
+  components: {},
 
   methods: {
-
-    initHeight(){
-      //setAutoHeight();
+    async initHeight() {
+      const isDone = await setAutoHeight();
+      console.log(isDone);
     },
 
-    initUserSession(){
-
-    }
+    initUserSession() {}
   },
 
-
   mounted() {
-   this.initHeight();
-   this.initUserSession();
+    this.initHeight();
+    this.initUserSession();
   }
 };
 </script>
 
 <template>
   <div id="app">
-    <router-loading/>
     <router-view/>
   </div>
 </template>

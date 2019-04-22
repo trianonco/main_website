@@ -13,10 +13,10 @@
         display: block;
         
         width: 100%;
-        height: 100px;
+        height: @7pm; 
 
         box-sizing: border-box;
-        padding: @2pm ;
+        padding: @0pm ;
         margin: @0pm;
 
         position: relative;
@@ -25,11 +25,22 @@
 
         // Component Theme Styles : 
         // @params [ '' , '' ]
-        #Theme-Light();
+        &.light{
+            #Theme-Light();
+            .header-title h1{
+                color: black;
+            }
+        }
+        &.dark{
+            #Theme-Dark();
+            .header-title h1{
+                color: white;
+            }
+        }
+        
 
     }
 // ------------------------- //
-
 
 
 
@@ -43,43 +54,80 @@
         // Header Nav
             display: block;
             width: 100%;
-            height: auto;
+            height: @5pm; 
 
             box-sizing: border-box;
-            padding: @2pm ;
+            padding: @0pm ;
             margin: @0pm;
 
-        // Font Styles : 
+            position: relative;
+
+        // Component Font Styles : 
         // @params [ 'normal' , 'bold' ]
-            #Font-OpenSans(); 
+            #Font-OpenSans();
+            #Font-SubTitle(); 
 
         // Component Theme Styles : 
         // @params [ '' , '' ]
-            #Theme-Light();
+            
 
-        // Images 
-            .back{
-                width: 5px;
+        // Component Layout
+            #Flex-Row-Extremes();
+
+        // Header Nav Back
+        &-back{
+            display: block;
+            width: 33.3333%;
+            height: @5pm; 
+
+            #Flex-Col-Center-toLeft();
+            div{
+                #Flex-Col-Center-toLeft()
             }
-            .profile{
-                width: 5px;
+            img.back{
+                width: @2pm;
+                padding: @1pm;
             }
-    }
-// ------------------------- //
-
-
-
-
-
-
-
-// ------------------------- //
-// -- Header-Logo --------- //
-// ------------------------- //
-    #constructor-header-logo(){
-        .logo{
-            width: 5px;
         }
+        // Header Nav Auth
+        &-auth{
+            display: block;
+            width: 33.3333%;
+            height: @5pm; 
+
+            &-login{
+                display: block;
+                width: auto; 
+                height: @5pm; 
+                h3{
+                    width: fit-content;
+                    margin: 0 auto;
+                    padding-bottom: @1p2m;
+                    padding-top: @1pm;
+                    border-bottom: 1px solid @color-gray;
+                }
+            }
+            &-profile{
+                display: block;
+                width: auto; 
+                height: 100%; 
+                height: @size-header-height; 
+            }
+        }
+        // Header Nav Logo
+        &-logo{
+            display: block;
+            width: 33.3333%;
+            img.logo{
+                width: @3pm;
+            }
+        }
+        
+        // Images 
+            img{
+                width: 10px;
+            }
+
     }
 // ------------------------- //
 
@@ -93,16 +141,23 @@
     #constructor-header-title(){
 
         display: block;
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: auto; 
+
+        padding: @0pm;
 
         // Font Styles : 
         // @params [ 'normal' , 'bold' ]
-        #Font-TrajanPro('bold');
+        #Font-TrajanPro('normal');
+        #Font-Title();
 
         // Component Theme Styles : 
         // @params [ '' , '' ]
-        #Theme-Light();
+        
+
+        h1{
+            padding: @1pm;
+        }
 
     }
 // ------------------------- //

@@ -1,21 +1,5 @@
-<template>
-  <div class="gender-buttons">
-    <div class="gender-button female" @click="goToCategory('FEMALE')">
-      <div class="wrapper">MUJER</div>
-    </div>
-    <div class="gender-button male" @click="goToCategory('MALE')">
-      <div class="wrapper">HOMBRE</div>
-    </div>
-  </div>
-</template>
-
-
-<style lang="less">
-@import (reference) "./../../styles/index.less";
-/*
-.gender-buttons {
+#Gender-Buttons() {
   width: 100%;
-  height: @size-gender-buttons-height;
   background-color: white;
 
   font-family: "TrajanPro";
@@ -96,18 +80,3 @@
 
   font-size: 0.9em;
 }
-*/
-</style>
-
-<script>
-export default {
-  name: "GenderButtonsComponent",
-  components: {},
-  data() {
-    return {};
-  },
-  computed: {},
-  mounted() {}
-};
-</script>
-

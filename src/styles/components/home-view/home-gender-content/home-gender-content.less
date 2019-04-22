@@ -1,0 +1,103 @@
+ #Gender-Content() {
+
+  display:block;
+
+  width: 100%;
+  height: @size-home-gender-content;
+
+  background-color:black;
+  color: white;
+
+  position: relative;
+  top: calc( 0px - @size-home-gender-content - @size-gender-buttons-height);
+  left: @0pm;
+
+  &.closed{
+    top: @0pm;
+  left: @0pm;
+  -webkit-transition: all 500ms ease-in-out;
+-moz-transition: all 500ms ease-in-out;
+-ms-transition: all 500ms ease-in-out;
+-o-transition: all 500ms ease-in-out;
+transition: all 500ms ease-in-out;
+  }
+  &.opened{
+    top: calc( 0px - @size-home-gender-content - @size-gender-buttons-height);
+  left: @0pm;
+  -webkit-transition: all 500ms ease-in-out;
+-moz-transition: all 500ms ease-in-out;
+-ms-transition: all 500ms ease-in-out;
+-o-transition: all 500ms ease-in-out;
+transition: all 500ms ease-in-out;
+  }
+
+  overflow-y:hidden;
+
+  .close-button{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: @2pm;
+    font-size: @2pm;
+  }
+  .categories{
+    background-color:black;
+    color: white;
+    padding: 20px 20px;
+    margin: 0px;
+    box-sizing: border-box;
+    width: 100%;
+    text-decoration: none;
+    height: @size-home-gender-content;
+    overflow-y:hidden;
+
+    &.MALE{
+      background-image: url('./../../../../assets/gender-categories/male-bg.png');
+          background-size: 10em;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    }
+    &.FEMALE{
+      background-image: url('./../../../../assets/gender-categories/female-bg.png');
+          background-size: 10em;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    }
+
+  }
+  .category{
+ 
+    margin: 0px;
+    text-decoration: none;
+
+    text-align: left;
+    display: block;
+
+    div{
+        padding: 10px 0px;
+        #Flex-Row-Center-toLeft();
+        #Font-TrajanPro();
+        img{
+          width: 0.85em;
+          padding: 0.5em;
+        }
+    }
+
+    h5{
+
+      color: white;
+    }
+  }
+  .border{
+    
+    position: relative;
+    top: -0.8em;
+    width: 100vw;
+    img{
+width: 100%;
+    }
+  }
+  
+}

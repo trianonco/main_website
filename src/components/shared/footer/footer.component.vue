@@ -1,12 +1,18 @@
 <template>
   <footer class="footer">
-    <div class="title">SÍGUENOS EN NUESTRAS REDES SOCIALES</div>
-    <div class="networks">
-      <div class="network" v-for="icon in icons" v-bind:key="icon.id">
-        <img :src="icon.src" :alt="icon.alt">
+    <div class="footer-title">
+      <h2>SÍGUENOS EN NUESTRAS REDES SOCIALES</h2>
+    </div>
+    <div class="footer-networks">
+      <div class="footer-network" v-for="icon in icons" v-bind:key="icon.id">
+        <a :href="icon.url" target="_blank">
+          <img :src="icon.src" :alt="icon.alt">
+        </a>
       </div>
     </div>
-    <div class="trianon-logo"></div>
+    <div class="footer-logo">
+      <img src="./../../../assets/footer/bull.png" class alt>
+    </div>
   </footer>
 </template>
 
@@ -19,26 +25,26 @@ export default {
         {
           id: 0,
           alt: "Facebook",
-          url: "www.facebook.com",
+          url: "https://www.facebook.com",
           src: "img/social-networks/fb.png"
         },
         {
           id: 1,
           alt: "Instagram",
-          url: "www.instagram.com",
-          src: "img/social-networks/fb.png"
+          url: "https://www.instagram.com",
+          src: "img/social-networks/instagram.png"
         },
         {
           id: 2,
           alt: "Twitter",
-          url: "www.twitter.com",
-          src: "img/social-networks/fb.png"
+          url: "https://www.twitter.com",
+          src: "img/social-networks/twitter.png"
         },
         {
           id: 3,
           alt: "Pinterest",
-          url: "www.pinterest.com",
-          src: "img/social-networks/fb.png"
+          url: "https://www.pinterest.com",
+          src: "img/social-networks/pinterest.png"
         }
       ]
     };
@@ -50,34 +56,49 @@ export default {
 <style lang="less">
 @import (reference) "./../../../styles/index.less";
 .footer {
-  display: none;
+  display: block;
   width: 100%;
-  background-color: black;
-  color: white;
-  font-size: 13px;
-  padding: 1em;
-  .networks {
-    img {
-      width: 25%;
+  height: @10pm;
+  margin: 0 auto;
+
+  z-index: 50;
+
+  position: relative;
+
+  background-color: @color-black;
+  color: @color-white;
+  &-title {
+    h2 {
+      #Font-OpenSans("normal");
+      font-weight: 300;
+      font-size: (@2pm - 4px);
+      padding: @1pm;
     }
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+  }
+
+  &-logo {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    img {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      padding: @1pm;
+      box-sizing: border-box;
+    }
+  }
+  &-networks {
+    #Flex-Row-Center-Center();
+  }
+  &-network {
+    display: block;
+    width: @4pm;
+    padding: @1pm;
+    img {
+      display: block;
+      width: 100%;
+    }
   }
 }
 </style>

@@ -11,12 +11,14 @@ import metaTags from "./meta-tags.json";
 // Shared
 import HeaderComponent from "../../components/shared/header/header.component";
 import FooterComponent from "../../components/shared/footer/footer.component";
+import RouterLoading from "../../components/shared/loader/loader.component";
 
 // Home Components
-/*
-import GenderButtonsComponent from "../../components/home/home-gender-buttons/gender-buttons.component";
-import SearchBarComponent from "../../components/home/search/home-search.component";
 import HomeSwiperComponent from "../../components/home/home-swiper/home-swiper.component";
+import HomeGenderButtonsComponent from "../../components/home/home-gender-buttons/home-gender-buttons.component";
+import HomeSearchBarComponent from "../../components/home/home-search/home-search.component";
+
+/*
 
 // Banners Components
 import BannerAuthorizedDistributorsComponent from "../../components/home/home-banners/banner-authorized-distributors.component";
@@ -35,10 +37,12 @@ export default {
 
   components: {
     HeaderComponent,
-    FooterComponent
-
+    FooterComponent,
+    RouterLoading,
+    HomeSwiperComponent,
+    HomeGenderButtonsComponent,
+    HomeSearchBarComponent
     /*
-    GenderButtonsComponent,
     SearchBarComponent,
     HomeSwiperComponent,
     BannerAuthorizedDistributorsComponent,
@@ -77,10 +81,19 @@ export default {
 
 <template>
   <div class="view home">
+    <!-- Home :: Loader -->
+    <router-loading/>
     <!-- Home :: Begin -->
-    <div class="wrapper">
+    <div class="view-wrapper">
       <!-- Header  -->
-      <headerComponent/>
+      <HeaderComponent/>
+
+      <!-- Home => Swiper  -->
+      <HomeSwiperComponent/>
+      <!-- Home => Gender Buttons -->
+      <HomeGenderButtonsComponent/>
+      <!-- Home => Search -->
+      <HomeSearchBarComponent/>
 
       <!-- Footers -->
       <FooterComponent/>
@@ -91,4 +104,13 @@ export default {
 
 <style lang="less">
 @import (reference) "../../styles/index.less";
+div.view.home {
+  display: block;
+  width: 100%;
+
+  div.view-wrapper {
+    height: 691px;
+    overflow: hidden;
+  }
+}
 </style>

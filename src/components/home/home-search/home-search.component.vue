@@ -1,28 +1,29 @@
 <template>
   <div class="search-bar-and-chat">
     <div class="search-bar">
-      <img src="../../assets/lupa-icon.png">
-      <input type="text" placeholder=" ... ">
+      <img src="../../../assets/lupa-icon.png">
+      <input type="text" placeholder="BUSCAR">
     </div>
     <div class="chat">
-      <img src="./../../assets/chat-icon.png">
+      <img src="./../../../assets/chat-icon.png">
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "SearchBarComponent"
+  name: "HomeSearchBarComponent"
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-@import (reference) "./../../styles/index.less";
-/*
+@import (reference) "./../../../styles/index.less";
 .search-bar-and-chat {
+  height: @size-search-height;
   width: 100%;
-  height: @size-search-bar-height;
+  z-index: 50;
+  overflow: hidden;
   background-color: black;
   color: #fff;
   position: relative;
@@ -30,9 +31,10 @@ export default {
     font-size: 20px;
   }
 }
+
 .search-bar {
   width: calc(100% - 2em);
-  height: @size-search-bar-height;
+  height: @size-search-height;
   margin: 0 auto;
   background-color: black;
   color: #fff;
@@ -80,5 +82,4 @@ export default {
     width: 2.25em;
   }
 }
-*/
 </style>
