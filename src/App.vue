@@ -28,7 +28,7 @@ export default {
 <style lang="less">
 @import "./styles/index.less";
 :root {
-  --app-height: 100%;
+  --app-height: 100vh;
 }
 
 html,
