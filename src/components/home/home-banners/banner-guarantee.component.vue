@@ -1,7 +1,7 @@
 
 <template>
   <div class="banner guarantee">
-    <img src="../../assets/guarantee-header.png">
+    <img src="../../../assets/guarantee-header.png">
     <div class="banner-title">
       <h2>GARANTÍA DIRECTA</h2>
       <p>
@@ -17,14 +17,14 @@
 
 <script>
 export default {
-  name: "BannerGuaranteeComponent",
+  name: "HomeBannerGuaranteeComponent",
   props: {}
 };
 </script>
 
 <style lang="less">
-@import (reference) "../../styles/index.less";
-/*
+@import (reference) "../../../styles/index.less";
+
 .banner.guarantee {
   display: block;
   width: 100%;
@@ -51,5 +51,4 @@ export default {
     margin: 0 auto;
   }
 }
-*/
 </style>

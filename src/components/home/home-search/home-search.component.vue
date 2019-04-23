@@ -25,10 +25,6 @@
         </li>
       </ul>
     </div>
-
-    <div class="chat">
-      <img src="./../../../assets/chat-icon.png">
-    </div>
   </div>
 </template>
 
@@ -119,6 +115,26 @@ export default {
     padding: 0.5em;
   }
 
+  ul {
+  }
+  li {
+    display: block;
+    vertical-align: middle;
+    width: fit-content;
+    img {
+      display: inline-block;
+      width: 1em;
+      vertical-align: middle;
+      padding: 5px;
+    }
+    h5 {
+      display: inline-block;
+      vertical-align: middle;
+      width: fit-content;
+      padding: 5px;
+    }
+  }
+
   &.closed {
     top: 0px;
     -webkit-transition: all 500ms ease-in-out;
@@ -137,26 +153,6 @@ export default {
       0px - @size-home-search-content - @size-search-height -
         @size-gender-buttons-height
     );
-
-    ul {
-    }
-    li {
-      display: block;
-      vertical-align: middle;
-      width: fit-content;
-      img {
-        display: inline-block;
-        width: 1em;
-        vertical-align: middle;
-        padding: 5px;
-      }
-      h5 {
-        display: inline-block;
-        vertical-align: middle;
-        width: fit-content;
-        padding: 5px;
-      }
-    }
   }
 
   background-color: white;
@@ -207,15 +203,6 @@ export default {
     width: 10em;
     font-family: "TrajanPro";
     width: 65vw;
-  }
-}
-.chat {
-  position: fixed;
-  bottom: 2vh;
-  right: 0.75em;
-  z-index: 1000;
-  img {
-    width: 2.25em;
   }
 }
 </style>

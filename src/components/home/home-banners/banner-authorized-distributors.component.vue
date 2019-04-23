@@ -9,7 +9,7 @@
       </h3>
     </div>
     <div class="banner-button gold">
-      <img class src="../../assets/button-place-ico-02.png">
+      <img class src="../../../assets/button-place-ico-02.png">
       <h4>
         <span>VER UBICACIONES</span>
       </h4>
@@ -19,20 +19,23 @@
 
 <script>
 export default {
-  name: "BannerAuthorizedDistributorsComponent",
+  name: "HomeBannerAuthorizedDistributorsComponent",
   props: {}
 };
 </script>
 
 <style lang="less">
-@import (reference) "../../styles/index.less";
-/*
+@import (reference) "../../../styles/index.less";
+
 .banner {
   display: block;
   width: 100%;
+  //height: @10pm;
   padding: 1em;
   box-sizing: border-box;
   background-color: white;
+  z-index: 150;
+  position: relative;
   &.authorized.distributors {
     .banner-title {
       h2 {
@@ -55,5 +58,4 @@ export default {
     }
   }
 }
-*/
 </style>

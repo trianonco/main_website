@@ -18,17 +18,14 @@ import HomeSwiperComponent from "../../components/home/home-swiper/home-swiper.c
 import HomeGenderButtonsComponent from "../../components/home/home-gender-buttons/home-gender-buttons.component";
 import HomeSearchBarComponent from "../../components/home/home-search/home-search.component";
 
-/*
-
 // Banners Components
-import BannerAuthorizedDistributorsComponent from "../../components/home/home-banners/banner-authorized-distributors.component";
-import BannerAuthorizedShopsComponent from "../../components/home/home-banners/banner-authorized-shops.component";
-import BannerAboutUsComponent from "../../components/home/home-banners/banner-about-us.component";
-import BannerCreditCardsComponent from "../../components/home/home-banners/banner-credit-cards.component";
-import BannerFreeShippingComponent from "../../components/home/home-banners/banner-free-shipping.component";
-import BannerGuaranteeComponent from "../../components/home/home-banners/banner-guarantee.component";
-import BannerAddressComponent from "../../components/home/home-banners/banner-address.component";
-*/
+import HomeBannerAuthorizedDistributorsComponent from "../../components/home/home-banners/banner-authorized-distributors.component";
+import HomeBannerAuthorizedShopsComponent from "../../components/home/home-banners/banner-authorized-shops.component";
+import HomeBannerAboutUsComponent from "../../components/home/home-banners/banner-about-us.component";
+import HomeBannerCreditCardsComponent from "../../components/home/home-banners/banner-credit-cards.component";
+import HomeBannerFreeShippingComponent from "../../components/home/home-banners/banner-free-shipping.component";
+import HomeBannerGuaranteeComponent from "../../components/home/home-banners/banner-guarantee.component";
+import HomeBannerAddressComponent from "../../components/home/home-banners/banner-address.component";
 
 export default {
   name: "HomeView",
@@ -41,18 +38,15 @@ export default {
     RouterLoading,
     HomeSwiperComponent,
     HomeGenderButtonsComponent,
-    HomeSearchBarComponent
-    /*
-    SearchBarComponent,
-    HomeSwiperComponent,
-    BannerAuthorizedDistributorsComponent,
-    BannerAuthorizedShopsComponent,
-    BannerAboutUsComponent,
-    BannerCreditCardsComponent,
-    BannerFreeShippingComponent,
-    BannerGuaranteeComponent,
-    BannerAddressComponent,
-    */
+    HomeSearchBarComponent,
+
+    HomeBannerAuthorizedDistributorsComponent,
+    HomeBannerAuthorizedShopsComponent,
+    HomeBannerAboutUsComponent,
+    HomeBannerCreditCardsComponent,
+    HomeBannerFreeShippingComponent,
+    HomeBannerGuaranteeComponent,
+    HomeBannerAddressComponent
   },
 
   data() {
@@ -94,9 +88,20 @@ export default {
       <HomeGenderButtonsComponent/>
       <!-- Home => Search -->
       <HomeSearchBarComponent/>
+      <!-- Home => HomeBanners-->
+      <HomeBannerAuthorizedDistributorsComponent/>
+      <HomeBannerAuthorizedShopsComponent/>
+      <HomeBannerAboutUsComponent/>
+      <HomeBannerFreeShippingComponent/>
+      <HomeBannerGuaranteeComponent/>
+      <HomeBannerAddressComponent/>
 
       <!-- Footers -->
       <FooterComponent/>
+
+      <div class="chat">
+        <img src="./../../assets/chat-icon.png">
+      </div>
     </div>
     <!-- ------------- -->
   </div>
@@ -109,8 +114,18 @@ div.view.home {
   width: 100%;
 
   div.view-wrapper {
-    height: calc(@size-height-app + @size-footer-height);
-    overflow: hidden;
+    //height: calc(@size-height-app + @size-footer-height);
+    //overflow: hidden;
+  }
+
+  div.chat {
+    position: fixed;
+    bottom: 2vh;
+    right: 0.75em;
+    z-index: 1000;
+    img {
+      width: 2.25em;
+    }
   }
 }
 </style>

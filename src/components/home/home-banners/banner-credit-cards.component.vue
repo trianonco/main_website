@@ -2,9 +2,9 @@
   <div class="banner credit cards">
     <h2>MÉTODOS DE PAGOS</h2>
     <div class="credit-cards">
-      <img src="../../assets/credit-card-mc.png">
-      <img src="../../assets/credit-card-visa.png">
-      <img src="../../assets/credit-card-amex.png">
+      <img src="../../../assets/credit-card-mc.png">
+      <img src="../../../assets/credit-card-visa.png">
+      <img src="../../../assets/credit-card-amex.png">
     </div>
     <p>Realiza tus pagos a través de trajeta de credito, debito automatico (PSE) ó efectivo por medio de Efecty, Davivienda ó Bancolombia ( consignación )</p>
   </div>
@@ -12,14 +12,14 @@
 
 <script>
 export default {
-  name: "BannerCreditCardsComponent",
+  name: "HomeBannerCreditCardsComponent",
   props: {}
 };
 </script>
 
 <style lang="less">
-@import (reference) "../../styles/index.less";
-/*
+@import (reference) "../../../styles/index.less";
+
 .banner.credit.cards {
   display: block;
   width: 100%;
@@ -56,5 +56,4 @@ export default {
   p {
   }
 }
-*/
 </style>

@@ -3,9 +3,9 @@
   <div class="banner address">
     <div class="header">
       <div class="title">
-        <img src="../../assets/bullet-gold-01.png">
+        <img src="../../../assets/bullet-gold-01.png">
         <h2>PUNTO DE FÁBRICA</h2>
-        <img src="../../assets/bullet-gold-01.png">
+        <img src="../../../assets/bullet-gold-01.png">
       </div>
       <div class="address">
         BOGOTÁ | CALLE 6A # 33 - 22
@@ -23,14 +23,14 @@
 
 <script>
 export default {
-  name: "BannerAddressComponent",
+  name: "HomeBannerAddressComponent",
   props: {}
 };
 </script>
 
 <style lang="less">
-@import (reference) "../../styles/index.less";
-/*
+@import (reference) "../../../styles/index.less";
+
 .banner.address {
   display: block;
   width: 100%;
@@ -38,7 +38,7 @@ export default {
   padding-bottom: 1em;
   box-sizing: border-box;
   background-color: black;
-  background-image: url("../../assets/address-bg.png");
+  background-image: url("../../../assets/address-bg.png");
   background-size: contain;
   background-position: center;
 
@@ -103,5 +103,4 @@ export default {
     }
   }
 }
-*/
 </style>

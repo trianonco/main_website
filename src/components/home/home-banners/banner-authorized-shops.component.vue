@@ -6,7 +6,7 @@
       <h3>CONTAMOS CON CINCO PUNTOS DIRECTOS CUATRO EN BOGOTÁ Y UNO EN PALMIRA</h3>
     </div>
     <div class="banner-button gold">
-      <img class src="../../assets/button-place-ico-02.png">
+      <img class src="../../../assets/button-place-ico-02.png">
       <h4>
         <span>VER UBICACIONES</span>
       </h4>
@@ -16,14 +16,14 @@
 
 <script>
 export default {
-  name: "BannerAuthorizedShopsComponent",
+  name: "HomeBannerAuthorizedShopsComponent",
   props: {}
 };
 </script>
 
 <style lang="less">
-@import (reference) "../../styles/index.less";
-/*
+@import (reference) "../../../styles/index.less";
+
 .banner.authorized.shops {
   display: block;
   width: 100%;
@@ -51,5 +51,4 @@ export default {
     }
   }
 }
-*/
 </style>

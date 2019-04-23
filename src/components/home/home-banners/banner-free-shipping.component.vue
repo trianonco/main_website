@@ -22,14 +22,14 @@
 
 <script>
 export default {
-  name: "BannerFreeShippingComponent",
+  name: "HomeBannerFreeShippingComponent",
   props: {}
 };
 </script>
 
 <style lang="less">
-@import (reference) "../../styles/index.less";
-/*
+@import (reference) "../../../styles/index.less";
+
 .banner.free.shipping {
   display: block;
   width: 100%;
@@ -39,7 +39,7 @@ export default {
 
   div.pic-bg {
     background-color: black;
-    background-image: url("../../assets/free-shipping-bg.png");
+    background-image: url("../../../assets/free-shipping-bg.png");
     background-size: cover;
     color: white;
     display: block;
@@ -49,7 +49,7 @@ export default {
   }
   div.gold-bg {
     background-color: #dfcc8d;
-    background-image: url("../../assets/free-shipping-gold.png");
+    background-image: url("../../../assets/free-shipping-gold.png");
     background-size: cover;
     color: white;
     display: block;
@@ -89,5 +89,4 @@ export default {
     padding: 0px;
   }
 }
-*/
 </style>
