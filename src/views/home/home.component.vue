@@ -70,7 +70,7 @@ export default {
 
   mounted() {
     //this.$getLocation().then(coordinates => {});
-    //this.$ga.page("/home");
+    this.$ga.page("/home");
     //this.$analytics.fbq('track', 'PageView');
   }
 };
