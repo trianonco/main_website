@@ -6,7 +6,7 @@
       <img src="../../../assets/credit-card-visa.png">
       <img src="../../../assets/credit-card-amex.png">
     </div>
-    <p>Realiza tus pagos a través de trajeta de credito, debito automatico (PSE) ó efectivo por medio de Efecty, Davivienda ó Bancolombia ( consignación )</p>
+    <p>Realiza tus pagos a través de trajeta de credito, debito automatico (PSE) ó efectivo por medio de Efecty</p>
   </div>
 </template>
 
@@ -28,7 +28,8 @@ export default {
   background-color: white;
   h2 {
     font-family: "TrajanPro";
-    font-size: 0.85em;
+    font-size: 0.75em;
+    color:gray;
   }
   div.credit-cards {
     display: -ms-flexbox;
@@ -54,6 +55,9 @@ export default {
     }
   }
   p {
+    color:gray;
+    line-height: 20px;
+    font-size:12px;
   }
 }
 </style>

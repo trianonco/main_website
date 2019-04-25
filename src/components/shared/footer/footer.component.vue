@@ -26,25 +26,25 @@ export default {
           id: 0,
           alt: "Facebook",
           url: "https://www.facebook.com",
-          src: "img/social-networks/fb.png"
+          src: "/img/social-networks/fb.png"
         },
         {
           id: 1,
           alt: "Instagram",
           url: "https://www.instagram.com",
-          src: "img/social-networks/instagram.png"
+          src: "/img/social-networks/instagram.png"
         },
         {
           id: 2,
           alt: "Twitter",
           url: "https://www.twitter.com",
-          src: "img/social-networks/twitter.png"
+          src: "/img/social-networks/twitter.png"
         },
         {
           id: 3,
           alt: "Pinterest",
           url: "https://www.pinterest.com",
-          src: "img/social-networks/pinterest.png"
+          src: "/img/social-networks/pinterest.png"
         }
       ]
     };

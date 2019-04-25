@@ -14,9 +14,10 @@
     </div>
     <div class="links">
       <router-link to="/safe">COMPRA SEGURA</router-link>/
-      <router-link to="/terms">TERMINOS DE SERVICIO</router-link>/
+      <router-link to="/terms">TERMINOS DE SERVICIO</router-link>
+      <br>
       <router-link to="/politics">POLITICAS DE PRIVACIDAD</router-link>/
-      <router-link to="/sitemap">MAPA DEL SITIO</router-link>/
+      <router-link to="/sitemap">MAPA DEL SITIO</router-link>
     </div>
   </div>
 </template>
@@ -34,12 +35,13 @@ export default {
 .banner.address {
   display: block;
   width: 100%;
+  height:fit-content;
   padding: 0em;
   padding-bottom: 1em;
   box-sizing: border-box;
   background-color: black;
   background-image: url("../../../assets/address-bg.png");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
 
   color: white;
@@ -47,11 +49,14 @@ export default {
   .links {
     color: white;
     text-decoration: none;
-    font-size: 0.9em;
-    width: 90%;
+    font-size: 10px;
+    letter-spacing: 2px;
+    width: 330px;
     margin: 0 auto;
+    line-height:18px;
+    font-weight:300;
     a {
-      color: black;
+       color: white;
       text-decoration: none;
     }
   }
@@ -59,10 +64,15 @@ export default {
   div.header {
     display: block;
     width: 90%;
+    height:fit-content;
     margin: 0 auto;
     background-color: white;
     color: black;
     margin-bottom: 1em;
+    
+    padding-top:1em;
+    padding-bottom:1em;
+
     .address {
       font-family: "Open Sans";
       text-transform: uppercase;
@@ -95,10 +105,11 @@ export default {
       font-family: "TrajanPro";
       font-size: 0.7em;
       font-weight: 300;
-      padding: 0em 0.25em;
+      padding: 0em 0.5em;
 
       img {
         width: 1em;
+        padding:1.25em;
       }
     }
   }

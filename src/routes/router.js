@@ -7,6 +7,7 @@ import Router from 'vue-router'
 import Home from './../views/home/home.component.vue'
 import Login from './../views/login/login.component.vue'
 import Admin from './../views/admin/admin.vue'
+import Products from './../views/products/products.component.vue'
 // ------------------------------------------------------- //
 
 
@@ -28,13 +29,39 @@ export default new Router({
     }, {
       path: '/home',
       redirect: { name: 'home' }
-    }
-    , {
+    }, {
+      path: '/products/:gender/:category/:description',
+      name: 'products',
+      component: Products
+    }, {
+      path: '/products/:gender/:category',
+      name: 'products',
+      component: Products
+    }, {
+      path: '/products/:category',
+      name: 'products',
+      component: Products
+    }, {
       path: '/admin',
       name: 'admin',
       component: Admin
-    },
-    {
+    }, {
+      path: '/safe',
+      name: 'safe',
+      component: Admin
+    }, {
+      path: '/terms',
+      name: 'terms',
+      component: Admin
+    }, {
+      path: '/politics',
+      name: 'politics',
+      component: Admin
+    }, {
+      path: '/sitemap',
+      name: 'sitemap',
+      component: Admin
+    }, {
       path: '/login',
       name: 'login',
       component: Login

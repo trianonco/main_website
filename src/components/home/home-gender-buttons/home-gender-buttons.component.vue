@@ -22,7 +22,7 @@
             <div v-if="isCategoryByGender(category)">
               <img src="../../../assets/gender-categories/bullet-gold.png" v-if="category.id === 0">
               <img src="../../../assets/gender-categories/bullet-gray.png" v-if="category.id !== 0">
-              <h5>{{ category.description }}</h5>
+              <h5 @click="goToProductsByCodeAndGender(category.code, category.description,gender)">{{ category.description }}</h5>
             </div>
           </li>
         </ul>
@@ -138,6 +138,13 @@ export default {
   computed: {},
   mounted() {},
   methods: {
+
+    goToProductsByCodeAndGender(category,description,gender){
+        this.$router.push({ name: 'products', params: { category: category, gender: gender, description: description } })
+    },
+
+
+
     closeGenderContent() {
       this.isOpen = false;
       this.gender = '';

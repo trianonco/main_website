@@ -3,7 +3,6 @@
 <template>
   <div class="banner free shipping">
     <div class="pic-bg">
-      <br>
       <h2>MEDIOS DE ENVIO</h2>
       <h3>
         !Envíos Gratis!
@@ -46,6 +45,30 @@ export default {
     width: 100%;
     padding: 1em;
     box-sizing: border-box;
+
+    h2{
+      font-size: 14px;
+      letter-spacing:4px;
+      font-weight:300;
+
+      padding-top:10px;
+      padding-bottom:10px;
+    }
+
+    h3{
+      font-size: 12px;
+      letter-spacing:1px;
+      font-weight:900;
+      line-height:16px;
+
+      padding-top:5px;
+      padding-bottom:10px;
+    }
+
+    h4{
+        font-size: 13px;
+        line-height:25px;
+    }
   }
   div.gold-bg {
     background-color: #dfcc8d;
@@ -60,7 +83,8 @@ export default {
       background-color: black;
       color: white;
       font-family: "TrajanPro";
-      font-size: 0.85em;
+      font-size: 14px;
+      letter-spacing:2px;
       padding: 1em;
       text-transform: uppercase;
     }

@@ -40,7 +40,7 @@ export default {
   &.authorized.distributors {
     .banner-title {
       max-width: 290px;
-  margin: 0 auto;
+      margin: 0 auto;
       #Font-TrajanPro('normal');
       h2 {
         font-size:14px;

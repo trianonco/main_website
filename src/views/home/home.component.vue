@@ -95,6 +95,7 @@ export default {
       <HomeBannerAuthorizedDistributorsComponent/>
       <HomeBannerAuthorizedShopsComponent/>
       <HomeBannerAboutUsComponent/>
+      <HomeBannerCreditCardsComponent/>
       <HomeBannerFreeShippingComponent/>
       <HomeBannerGuaranteeComponent/>
       <HomeBannerAddressComponent/>

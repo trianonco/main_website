@@ -99,11 +99,11 @@ export default {
       return this.UI.themeClass;
     },
     goToLogin() {
-      this.$router.push("login");
+      this.$router.push("/login");
       store.dispatch("setView", { id: 1, name: "LOGIN_VIEW" });
     },
     goToHome() {
-      this.$router.push("/asdfasdf");
+      this.$router.push("asdfasdf");
       //store.dispatch("setView", { id : 0 , name : 'LOGIN_HOME'});
     },
     gotToBack() {
