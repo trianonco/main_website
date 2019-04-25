@@ -52,7 +52,7 @@
     #Gender-Buttons();
     height: @size-gender-buttons-height;
     .gender-button .wrapper {
-      padding: @2pm - 2px;
+      padding: 10px;
     }
   }
   .gender-contents {

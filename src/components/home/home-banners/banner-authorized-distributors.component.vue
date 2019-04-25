@@ -1,6 +1,6 @@
 <template>
   <div class="banner authorized distributors">
-    <br>
+    
     <div class="banner-title">
       <h2>Distribuidos Autorizados</h2>
       <h3>
@@ -30,6 +30,7 @@ export default {
 .banner {
   display: block;
   width: 100%;
+  
   //height: @10pm;
   padding: 1em;
   box-sizing: border-box;
@@ -38,20 +39,28 @@ export default {
   position: relative;
   &.authorized.distributors {
     .banner-title {
+      max-width: 290px;
+  margin: 0 auto;
+      #Font-TrajanPro('normal');
       h2 {
-        font-family: "TrajanPro";
-        font-size: 0.85em;
+        font-size:14px;
+        padding-bottom: 10px;
       }
       h3 {
         font-family: "Open Sans";
+            transform: scaleY(1);
         text-transform: uppercase;
         color: @color-gray;
-        font-size: 0.95em;
+        font-size:11px;
         font-weight: 300;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
+        padding-bottom:10px;
+        line-height:16px;
       }
     }
     .banner-button {
+      max-width: 290px;
+  margin: 0 auto;
       &.gold {
         #button-gold();
       }
