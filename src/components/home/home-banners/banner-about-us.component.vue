@@ -3,7 +3,7 @@
     <img src="../../../assets/about-us-header.png">
     <div class="banner-title">
       <h2>UNA TRADICIÓN DESDE 1935</h2>
-      <h3>En TRIANON hemos construido experiencia y tradición por más de 80 años, dedicándonos a la fabricación de marroquineriá y accesorios en cuero, como, billeteras, bolsos, cinturones y llaveros, entre otros. Nuestra escencia está en el talento humano, fabricando productos con insumos 100% colombianos. En Trianon, creamos artesanalmente cada artículo con la más alta calidad y detalle, logrando que cada producto sea una pieza única.</h3>
+      <h3>En TRIANON hemos construido experiencia y tradición por más de 80 años, dedicándonos a la fabricación de marroquineriá y accesorios en cuero, como, billeteras, bolsos, cinturones y llaveros, entre otros. Nuestra escencia está en el talento humano, fabricando productos con insumos 100% colombianos. Creamos artesanalmente cada artículo con la más alta calidad y detalle, logrando que cada producto sea una pieza única.</h3>
     </div>
   </div>
 </template>
@@ -36,11 +36,11 @@ export default {
   .banner-title {
     h2 {
       font-family: "TrajanPro";
-      font-weight:300;
+      font-weight: 300;
       transform: scaleY(0.9);
       font-size: 12px;
-      padding-top:12px;
-      padding-bottom:8px;
+      padding-top: 12px;
+      padding-bottom: 8px;
     }
     h3 {
       font-family: "Open Sans";
@@ -51,16 +51,15 @@ export default {
       margin: 0 auto;
 
       font-family: "Open Sans";
-                  transform: scaleY(1);
+      transform: scaleY(1);
 
       color: @color-gray;
-     font-size:12px;
-        font-weight: 300;
-        letter-spacing: 0px;
-        padding-bottom:10px;
-        padding-top:10px;
-        line-height:16px;
-
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      line-height: 16px;
     }
   }
   .banner-button {

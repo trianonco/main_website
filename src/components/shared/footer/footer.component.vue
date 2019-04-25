@@ -25,25 +25,25 @@ export default {
         {
           id: 0,
           alt: "Facebook",
-          url: "https://www.facebook.com",
+          url: "https://www.facebook.com/trianonoficial/",
           src: "/img/social-networks/fb.png"
         },
         {
           id: 1,
           alt: "Instagram",
-          url: "https://www.instagram.com",
+          url: "https://www.instagram.com/trianonoficial/",
           src: "/img/social-networks/instagram.png"
         },
         {
           id: 2,
           alt: "Twitter",
-          url: "https://www.twitter.com",
+          url: "https://twitter.com/TrianonOficial",
           src: "/img/social-networks/twitter.png"
         },
         {
           id: 3,
           alt: "Pinterest",
-          url: "https://www.pinterest.com",
+          url: "https://co.pinterest.com/TrianonOficial/",
           src: "/img/social-networks/pinterest.png"
         }
       ]
@@ -95,7 +95,7 @@ export default {
   &-network {
     display: block;
     width: @3pm + 4px;
-    padding: @1pm  + 4px;
+    padding: @1pm + 4px;
     img {
       display: block;
       width: 100%;

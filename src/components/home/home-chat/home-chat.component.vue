@@ -27,28 +27,27 @@ div.chat {
   width: 2.25em;
   height: 2.25em;
 
-  div.chat-wrapper{
+  div.chat-wrapper {
     position: relative;
   }
 
-  div.chat-buget{
-    position:absolute;
-    top:-10px;
-    left:-10px;
+  div.chat-buget {
+    position: absolute;
+    top: -10px;
+    left: -10px;
 
-    background:@color-yellow;
-  border: 1px solid @color-yellow;
-  border-radius: 100%;
-  color:black;
+    background: @color-yellow;
+    border: 1px solid @color-yellow;
+    border-radius: 100%;
+    color: black;
 
-  padding:0.5em;
+    padding: 0.5em;
 
-  width:0.5em;
-  height:0.5em;
+    width: 0.5em;
+    height: 0.5em;
 
-  #Flex-Col-Center-Center();
-
-}
+    #Flex-Col-Center-Center();
+  }
   img {
     width: 2.25em;
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="banner credit cards">
-    <h2>MÉTODOS DE PAGOS</h2>
+    <h2>MÉTODOS DE PAGO</h2>
     <div class="credit-cards">
       <img src="../../../assets/credit-card-mc.png">
       <img src="../../../assets/credit-card-visa.png">
@@ -29,7 +29,7 @@ export default {
   h2 {
     font-family: "TrajanPro";
     font-size: 0.75em;
-    color:gray;
+    color: gray;
   }
   div.credit-cards {
     display: -ms-flexbox;
@@ -55,9 +55,9 @@ export default {
     }
   }
   p {
-    color:gray;
+    color: gray;
     line-height: 20px;
-    font-size:12px;
+    font-size: 12px;
   }
 }
 </style>
