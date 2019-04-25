@@ -4,12 +4,12 @@
             <h1 class="title">{{ title }}</h1>
             <h2 class="subtitle">{{ description }}</h2>
             <div class="login-signin-buttons">
-              <div class="login-signin-button facebook">
+              <div class="login-signin-button facebook" >
                 <img src="../../../assets/signin/bullet-fb.png" class alt>
                   <h1>INGRESA CON FACEBOOK</h1>
                 <img src="../../../assets/signin/bullet-fb.png" class alt>
               </div>
-              <div class="login-signin-button gmail">
+              <div class="login-signin-button gmail" @click="doLoginGmail()">
                 <img src="../../../assets/signin/bullet-gmail.png" class alt>
                   <h1>INGRESA CON GMAIL</h1>
                 <img src="../../../assets/signin/bullet-gmail.png" class alt>
@@ -25,8 +25,40 @@
 </template>
 
 <script>
+import firebase from 'firebase';
 export default {
   name: "LoginSigninComponent",
+
+  methods: {
+
+    doLoginGmail(){
+
+      var provider = new firebase.auth.GoogleAuthProvider();
+
+      firebase.auth().signInWithPopup(provider).then(function(result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+
+        alert(user.displayName);
+        // ...
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+        console.error('Auth Error GMAIL');
+        console.error(error)
+      });
+
+    }
+
+  },
   data(){
     return{
       title : 'INICIO DE SESIÓN',
