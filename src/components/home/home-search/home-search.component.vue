@@ -7,8 +7,8 @@
 
     <div class="search-results" :class="getSearchResultsClass()">
       <div class="close-button" @click="closeSearchResults()">x</div>
-      <h1>Sugerencias</h1>
       <ul v-if="!searchKeyword">
+        <h1>Sugerencias</h1>
         <li v-for="item of default_results" v-bind:key="item.id">
           <div v-if="isItemOnSearch(item)">
             <img src="../../../assets/gender-categories/bullet-gray.png">
@@ -94,28 +94,44 @@ export default {
   color: #fff;
   position: relative;
   z-index: 120;
+
+  #Font-TrajanPro();
   h1 {
-    font-size: 20px;
+    #Font-Title();
+     font-size: (@1pm + 4px);
+    
+    width:fit-content;
+    margin:0px;
+    padding-bottom:10px;
+    
   }
 }
 
 .search-results {
   display: block;
   width: 100%;
-  height: @size-home-search-content;
+  height: calc(@size-home-search-content + @size-home-gender-content);
 
   z-index: 100;
 
   position: relative;
 
+  background-color:white;
+  background-image: url('./../../../assets/search/border-top.png');
+  background-repeat: no-repeat;
+  background-size: 100% 4px;
+
   .close-button {
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 5px;
+    right: 5px;
     padding: 0.5em;
   }
 
   ul {
+    width:100%;
+      box-sizing: border-box;
+  padding:2em;
   }
   li {
     display: block;
@@ -123,11 +139,13 @@ export default {
     width: fit-content;
     img {
       display: inline-block;
-      width: 1em;
+      width: 0.5em;
       vertical-align: middle;
       padding: 5px;
     }
     h5 {
+      #Font-Title();
+      font-size: (@1pm + 4px);
       display: inline-block;
       vertical-align: middle;
       width: fit-content;
@@ -198,11 +216,10 @@ export default {
     outline: none;
     border-bottom: 1px solid white;
     color: white;
-    font-size: 1.1em;
+    font-size: 0.75em;
     letter-spacing: 0.1em;
-    width: 10em;
-    font-family: "TrajanPro";
-    width: 65vw;
+    width: ~"calc(100% - 12.5em)";
+    #Font-TrajanPro();
   }
 }
 </style>

@@ -73,6 +73,7 @@ export default {
       font-weight: 300;
       font-size: (@2pm - 4px);
       padding: @1pm;
+      padding-top: @1pm + 8px;
     }
   }
 
@@ -93,8 +94,8 @@ export default {
   }
   &-network {
     display: block;
-    width: @4pm;
-    padding: @1pm;
+    width: @3pm + 4px;
+    padding: @1pm  + 4px;
     img {
       display: block;
       width: 100%;

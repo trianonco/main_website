@@ -13,7 +13,7 @@
         display: block;
         
         width: 100%;
-        height: @7pm; 
+        height: @size-header-height; 
 
         box-sizing: border-box;
         padding: @0pm ;
@@ -54,7 +54,7 @@
         // Header Nav
             display: block;
             width: 100%;
-            height: @5pm; 
+            height: @size-header-height - @2pm; 
 
             box-sizing: border-box;
             padding: @0pm ;
@@ -78,7 +78,7 @@
         &-back{
             display: block;
             width: 33.3333%;
-            height: @5pm; 
+            height: @size-header-height - @2pm; 
 
             #Flex-Col-Center-toLeft();
             div{
@@ -93,15 +93,16 @@
         &-auth{
             display: block;
             width: 33.3333%;
-            height: @5pm; 
+            height: @size-header-height - @2pm;  
 
             &-login{
                 display: block;
                 width: auto; 
-                height: @5pm; 
+                height: @size-header-height - @2pm; 
                 h3{
                     width: fit-content;
                     margin: 0 auto;
+                    letter-spacing: 1px;
                     padding-bottom: @1p2m;
                     padding-top: @1pm;
                     border-bottom: 1px solid @color-gray;
@@ -156,7 +157,9 @@
         
 
         h1{
-            padding: @1pm;
+            padding: @1pm - 4px;
+            position: relative;
+            top: -6px;;
         }
 
     }

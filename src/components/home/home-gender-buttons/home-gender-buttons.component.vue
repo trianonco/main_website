@@ -1,11 +1,15 @@
 <template>
   <div class="gender-selector">
     <div class="gender-buttons">
-      <div class="gender-button female" @click="openGenderContent('FEMALE')">
-        <div class="wrapper">MUJER **</div>
+      <div class="gender-button female" @click="openGenderContent('FEMALE')" >
+        <div class="wrapper" :class="getActiveClassByGender('FEMALE')">
+          <h3>MUJER</h3>
+          </div>
       </div>
-      <div class="gender-button male" @click="openGenderContent('MALE')">
-        <div class="wrapper">HOMBRE</div>
+      <div class="gender-button male" @click="openGenderContent('MALE')" >
+        <div class="wrapper" :class="getActiveClassByGender('MALE')">
+          <h3>HOMBRE</h3>
+          </div>
       </div>
     </div>
 
@@ -48,7 +52,7 @@
     #Gender-Buttons();
     height: @size-gender-buttons-height;
     .gender-button .wrapper {
-      padding: @1pm;
+      padding: @2pm - 2px;
     }
   }
   .gender-contents {
@@ -127,7 +131,7 @@ export default {
           gender: ["MALE", "FEMALE"]
         }
       ],
-      gender: "MALE",
+      gender: "",
       isOpen: false
     };
   },
@@ -136,6 +140,7 @@ export default {
   methods: {
     closeGenderContent() {
       this.isOpen = false;
+      this.gender = '';
     },
 
     openGenderContent(gender) {
@@ -149,6 +154,14 @@ export default {
 
     getGenderClass() {
       return this.gender;
+    },
+
+    getActiveClassByGender(gender){
+      if(this.gender === gender){
+        return 'active'
+      }else{
+        return 'default'
+      }
     },
 
     getStatusClass() {

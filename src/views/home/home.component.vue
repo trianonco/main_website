@@ -27,6 +27,7 @@ import HomeBannerFreeShippingComponent from "../../components/home/home-banners/
 import HomeBannerGuaranteeComponent from "../../components/home/home-banners/banner-guarantee.component";
 import HomeBannerAddressComponent from "../../components/home/home-banners/banner-address.component";
 
+import HomeChatComponent from "../../components/home/home-chat/home-chat.component";
 export default {
   name: "HomeView",
 
@@ -46,7 +47,9 @@ export default {
     HomeBannerCreditCardsComponent,
     HomeBannerFreeShippingComponent,
     HomeBannerGuaranteeComponent,
-    HomeBannerAddressComponent
+    HomeBannerAddressComponent,
+
+    HomeChatComponent
   },
 
   data() {
@@ -99,9 +102,8 @@ export default {
       <!-- Footers -->
       <FooterComponent/>
 
-      <div class="chat">
-        <img src="./../../assets/chat-icon.png">
-      </div>
+      <!-- Chat -->
+      <HomeChatComponent/>
     </div>
     <!-- ------------- -->
   </div>
@@ -115,17 +117,7 @@ div.view.home {
 
   div.view-wrapper {
     //height: calc(@size-height-app + @size-footer-height);
-    //overflow: hidden;
-  }
-
-  div.chat {
-    position: fixed;
-    bottom: 2vh;
-    right: 0.75em;
-    z-index: 1000;
-    img {
-      width: 2.25em;
-    }
+    overflow-x: hidden;
   }
 }
 </style>

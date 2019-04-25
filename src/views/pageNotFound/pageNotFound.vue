@@ -47,8 +47,8 @@ export default {
 @import (reference) "../../styles/index.less";
 .error-404-main {
   display: block;
-  width: 100vw;
-  height: ~"calc( 100vh - 20vh - 2em - 56px - 30px)";
+  width: 100%;
+  height: calc( @size-height-app - @size-header-height - 2em - 20vh);
   background-color: black;
 
   #Flex-Col-Center-Center();
