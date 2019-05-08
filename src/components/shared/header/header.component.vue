@@ -30,16 +30,18 @@
 
       <!-- Header :: Nav :: Auth -->
       <div class="header-nav-auth">
-        <div class="header-nav-auth-login" v-if="hasLogin()">
+        <div class="header-nav-auth-login" v-if="hasLogin() && !hasProfile()">
           <h3 @click="goToLogin()">INICIAR SESIÓN</h3>
         </div>
         <div class="header-nav-auth-profile" v-if="hasProfile()">
-          <img
-            class="profile"
-            src="@/assets/header/profile.png"
-            alt="Trianon Colombia, Profile. Perfil persional. Usuarios de Trianon"
-          >
-          <h3>MI PERFIL</h3>
+          <div class="wrapper">
+            <img
+              class="profile"
+              src="@/assets/header/profile.png"
+              alt="Trianon Colombia, Profile. Perfil persional. Usuarios de Trianon"
+            >
+            <h3>MI PERFIL</h3>
+          </div>
         </div>
       </div>
     </div>
@@ -58,6 +60,8 @@
 import store from "./../../../store/store.js";
 export default {
   name: "HeaderComponent",
+
+  props: ["profile"],
 
   computed: {
     view() {
@@ -103,7 +107,7 @@ export default {
       store.dispatch("setView", { id: 1, name: "LOGIN_VIEW" });
     },
     goToHome() {
-      this.$router.push("asdfasdf");
+      this.$router.push("/");
       //store.dispatch("setView", { id : 0 , name : 'LOGIN_HOME'});
     },
     gotToBack() {

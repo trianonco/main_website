@@ -2,23 +2,8 @@
   <div class="swiper home-swiper">
     <swiper :options="swiperOption" ref="mySwiper">
       <!-- slides -->
-      <swiper-slide>
-        <v-lazy-image
-          :src="require('./../../../assets/Home-Slider/img1.png')"
-          :src-placeholder="require('./../../../assets/Home-Slider/img1-placeholder.jpg')"
-        />
-      </swiper-slide>
-      <swiper-slide>
-        <v-lazy-image
-          :src="require('./../../../assets/Home-Slider/img2.png')"
-          :src-placeholder="require('./../../../assets/Home-Slider/img2-placeholder.jpg')"
-        />
-      </swiper-slide>
-      <swiper-slide>
-        <v-lazy-image
-          :src="require('./../../../assets/Home-Slider/img3.png')"
-          :src-placeholder="require('./../../../assets/Home-Slider/img3-placeholder.jpg')"
-        />
+      <swiper-slide v-for="swiperImage of swiperImages" v-bind:key="swiperImage.id">
+        <v-lazy-image :src="swiperImage.src_hd" :src-placeholder="swiperImage.src_thumb"/>
       </swiper-slide>
 
       <!-- Optional controls -->
@@ -29,6 +14,7 @@
 </template>
 
 <script>
+import firebase from "firebase";
 import VLazyImage from "v-lazy-image";
 
 export default {
@@ -40,6 +26,7 @@ export default {
 
   data() {
     return {
+      swiperImages: [],
       swiperOption: {
         effect: "fade",
         autoplay: {
@@ -58,7 +45,20 @@ export default {
       return this.$refs.mySwiper.swiper;
     }
   },
-  mounted() {}
+  mounted() {
+    var db = firebase.firestore();
+    db.collection("home-swiper-images")
+      .get()
+      .then(querySnapshot => {
+        this.swiperImages = [];
+        querySnapshot.forEach(doc => {
+          const docData = doc.data();
+          this.swiperImages.push(docData);
+        });
+
+        this.swiperImages.sort((a, b) => a.orderId - b.orderId);
+      });
+  }
 };
 </script>
 
@@ -95,5 +95,30 @@ export default {
 
   border: 2px solid rgba(100, 100, 100, 0.7) !important;
   border-radius: 0em !important;
+  outline: none;
+  span {
+    outline: none;
+  }
+}
+.swiper-pagination-bullet-active {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+* {
+  outline: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  &:focus {
+    outline: none !important;
+  }
 }
 </style>

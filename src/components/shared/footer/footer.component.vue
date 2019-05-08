@@ -96,7 +96,12 @@ export default {
     display: block;
     width: @3pm + 4px;
     padding: @1pm + 4px;
+    display: block;
+    width: 36px;
+    padding: 7px;
+
     img {
+      box-sizing: content-box;
       display: block;
       width: 100%;
     }

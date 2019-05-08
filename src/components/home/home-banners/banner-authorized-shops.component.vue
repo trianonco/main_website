@@ -33,23 +33,23 @@ export default {
   color: white;
   .banner-title {
     max-width: 290px;
-      margin: 0 auto;
-      #Font-TrajanPro('normal');
+    margin: 0 auto;
+    #Font-TrajanPro("normal");
     h2 {
-      font-size:14px;
-        padding-bottom: 10px;
+      font-size: 14px;
+      padding-bottom: 10px;
     }
     h3 {
       font-family: "Open Sans";
-                  transform: scaleY(1);
+      transform: scaleY(1);
 
       text-transform: uppercase;
-      color: @color-gray;
-     font-size:11px;
-        font-weight: 300;
-        letter-spacing: 2px;
-        padding-bottom:10px;
-        line-height:16px;
+      color: @color-white;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      padding-bottom: 10px;
+      line-height: 16px;
     }
   }
   .banner-button {

@@ -13,6 +13,7 @@ import 'firebase/messaging';
 import 'firebase/storage';
 
 // Vue Vendors & PlugIn
+
 import VLazyImagePlugin from 'v-lazy-image';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import VueGeolocation from 'vue-browser-geolocation';
@@ -20,6 +21,7 @@ import VueAnalytics from 'vue-analytics'
 import VueFacebookPixel from 'vue-analytics-facebook-pixel'
 
 import 'swiper/dist/css/swiper.css'
+import 'handsontable/dist/handsontable.full.css';
 import './service-workers/registerServiceWorker'
 
 // Vue Install Plug Ins

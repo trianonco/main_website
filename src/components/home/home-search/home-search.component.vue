@@ -29,11 +29,13 @@
 </template>
 
 <script>
+import { stringSimilarity } from "string-similarity-js";
 export default {
   name: "HomeSearchBarComponent",
   methods: {
     isItemOnSearch(item) {
       return (
+        stringSimilarity(item.description, this.searchKeyword) > 0.9 ||
         item.description.includes(this.searchKeyword) ||
         item.description
           .toUpperCase()
@@ -98,12 +100,11 @@ export default {
   #Font-TrajanPro();
   h1 {
     #Font-Title();
-     font-size: (@1pm + 4px);
-    
-    width:fit-content;
-    margin:0px;
-    padding-bottom:10px;
-    
+    font-size: (@1pm + 4px);
+
+    width: fit-content;
+    margin: 0px;
+    padding-bottom: 10px;
   }
 }
 
@@ -116,8 +117,8 @@ export default {
 
   position: relative;
 
-  background-color:white;
-  background-image: url('./../../../assets/search/border-top.png');
+  background-color: white;
+  background-image: url("./../../../assets/search/border-top.png");
   background-repeat: no-repeat;
   background-size: 100% 4px;
 
@@ -129,9 +130,9 @@ export default {
   }
 
   ul {
-    width:100%;
-      box-sizing: border-box;
-  padding:2em;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2em;
   }
   li {
     display: block;

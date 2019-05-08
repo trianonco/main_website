@@ -1,17 +1,15 @@
 <template>
   <div class="view login">
     <div class="wrapper">
-
       <!-- Headers -->
       <HeaderComponent/>
 
       <!-- Login Components -->
       <LoginSigninComponent></LoginSigninComponent>
       <LoginShareComponent></LoginShareComponent>
-      
+
       <!-- Footers -->
       <FooterComponent/>
-
     </div>
   </div>
 </template>
@@ -22,9 +20,17 @@ import HeaderComponent from "../../components/shared/header/header.component";
 import FooterComponent from "../../components/shared/footer/footer.component";
 import LoginSigninComponent from "../../components/login/login-signin/login-signin.component";
 import LoginShareComponent from "../../components/login/login-share/login-share.component";
-
+import firebase from "firebase";
 export default {
   name: "login",
+
+  beforeMount() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.$router.push("/profile");
+      }
+    });
+  },
   components: {
     HeaderComponent,
     FooterComponent,
@@ -41,7 +47,6 @@ div.view.home {
   width: 100%;
 
   div.view-wrapper {
-
   }
 }
 </style>

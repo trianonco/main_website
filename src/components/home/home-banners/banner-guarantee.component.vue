@@ -41,17 +41,18 @@ export default {
   h2 {
     font-family: "TrajanPro";
     font-size: 0.85em;
-    padding:1em 0em;
+    padding: 1em 0em;
   }
   p {
- font-family: "Open Sans";
+    font-family: "Open Sans";
     font-size: 11px;
     font-weight: 300;
-    width: 338px;
+    max-width: 338px;
+    width: 90%;
     line-height: 22px;
     letter-spacing: 1px;
     margin: 0 auto;
-    padding-bottom:15px;
+    padding-bottom: 15px;
   }
 }
 </style>

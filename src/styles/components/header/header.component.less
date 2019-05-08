@@ -87,6 +87,7 @@
             img.back{
                 width: @2pm;
                 padding: @1pm;
+                    box-sizing: content-box;
             }
         }
         // Header Nav Auth
@@ -100,19 +101,40 @@
                 width: auto; 
                 height: @size-header-height - @2pm; 
                 h3{
+                    font-size: 10px;
                     width: fit-content;
-                    margin: 0 auto;
-                    letter-spacing: 1px;
+                    float:right;
+                    letter-spacing: 0px;
                     padding-bottom: @1p2m;
-                    padding-top: @1pm;
                     border-bottom: 1px solid @color-gray;
                 }
+                padding-top: @2pm;
+                padding-right: @2pm;
             }
             &-profile{
                 display: block;
-                width: auto; 
+                
+                    width: 67px;
+    margin-left: auto;
                 height: 100%; 
                 height: @size-header-height; 
+
+                .wrapper{
+                    display: flex !important;
+                    
+                    #Flex-Row-Center-toLeft();
+                    width: auto; 
+                    height: auto; 
+                    h3{
+                        width: auto;
+                    }
+                    img{
+                        width:8px;
+                        padding: 2px;
+                        display: block;
+                        box-sizing:content-box;
+                    }
+                }
             }
         }
         // Header Nav Logo

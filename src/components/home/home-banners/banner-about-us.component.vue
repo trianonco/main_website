@@ -38,6 +38,7 @@ export default {
       font-family: "TrajanPro";
       font-weight: 300;
       transform: scaleY(0.9);
+      letter-spacing: 1px;
       font-size: 12px;
       padding-top: 12px;
       padding-bottom: 8px;
@@ -47,13 +48,13 @@ export default {
       color: @color-black;
       font-weight: 900;
       letter-spacing: 1px;
-      width: 313px;
+      max-width: 313px;
+      width: 100%;
       margin: 0 auto;
 
       font-family: "Open Sans";
       transform: scaleY(1);
 
-      color: @color-gray;
       font-size: 12px;
       font-weight: 300;
       letter-spacing: 0px;

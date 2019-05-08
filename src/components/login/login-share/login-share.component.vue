@@ -1,5 +1,5 @@
 <template>
-  <div class="login-share">
+  <div class="login-share" :class="getThemeClass()">
     <div class="login-share-wrapper">
       <h1>{{ message }}</h1>
     </div>
@@ -9,45 +9,60 @@
 <script>
 export default {
   name: "LoginShareComponent",
-  data(){
-    return{
-      message : '¡COMPARTE Y GANA DESCUENTOS!'
+  props: ["theme"],
+  methods: {
+    getThemeClass() {
+      if (this.theme && this.theme == "gray") {
+        return "theme-gray";
+      } else {
+        return "theme-gold";
+      }
     }
+  },
+  mounted() {},
+  data() {
+    return {
+      message: "¡COMPARTE Y GANA DESCUENTOS!"
+    };
   }
 };
 </script>
 
 <style lang="less">
 @import (reference) "./../../../styles/index.less";
-div.login-share{
-  display:block;
+div.login-share {
+  display: block;
   width: 100%;
   height: @size-login-share-height;
-  background-color:@color-yellow;
-  background-image: url('./../../../assets/share/gold-bg.png');
-      background-repeat: repeat-x;
-    background-size: contain;
 
-    #Flex-Col-Center-Center();
+  background-repeat: repeat-x;
+  background-size: contain;
 
-   
-  &-wrapper{
-    display:block;
-    width:fit-content;
+  #Flex-Col-Center-Center();
+
+  &.theme-gold {
+    background-color: @color-yellow;
+    background-image: url("./../../../assets/share/gold-bg.png");
+  }
+  &.theme-gray {
+    background-color: @color-gray;
+    background-image: none;
+  }
+
+  &-wrapper {
+    display: block;
+    width: fit-content;
 
     box-sizing: border-box;
-    padding:1em;
+    padding: 1em;
 
-    margin:0 auto;
+    margin: 0 auto;
 
     background-color: black;
     color: @color-white;
 
-
-     #Font-TrajanPro('normal');
-        #Font-Title();
-
+    #Font-TrajanPro("normal");
+    #Font-Title();
   }
-
 }
 </style>

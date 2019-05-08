@@ -5,9 +5,11 @@ import Router from 'vue-router'
 // -- Routes --------------------------------------------- //
 // ------------------------------------------------------- //
 import Home from './../views/home/home.component.vue'
+import Profile from './../views/profile/profile.component.vue'
 import Login from './../views/login/login.component.vue'
 import Admin from './../views/admin/admin.vue'
 import Products from './../views/products/products.component.vue'
+import Product from './../views/product/product.component.vue'
 // ------------------------------------------------------- //
 
 
@@ -27,6 +29,10 @@ export default new Router({
       name: 'home',
       component: Home
     }, {
+      path: '/profile',
+      name: 'profile',
+      component: Profile
+    }, {
       path: '/home',
       redirect: { name: 'home' }
     }, {
@@ -41,6 +47,14 @@ export default new Router({
       path: '/products/:category',
       name: 'products',
       component: Products
+    }, {
+      path: '/products/',
+      name: 'products',
+      component: Products
+    }, {
+      path: '/product/id/:id',
+      name: 'product',
+      component: Product
     }, {
       path: '/admin',
       name: 'admin',

@@ -1,15 +1,15 @@
 <template>
   <div class="gender-selector">
     <div class="gender-buttons">
-      <div class="gender-button female" @click="openGenderContent('FEMALE')" >
+      <div class="gender-button female" @click="openGenderContent('FEMALE')">
         <div class="wrapper" :class="getActiveClassByGender('FEMALE')">
           <h3>MUJER</h3>
-          </div>
+        </div>
       </div>
-      <div class="gender-button male" @click="openGenderContent('MALE')" >
+      <div class="gender-button male" @click="openGenderContent('MALE')">
         <div class="wrapper" :class="getActiveClassByGender('MALE')">
           <h3>HOMBRE</h3>
-          </div>
+        </div>
       </div>
     </div>
 
@@ -20,9 +20,17 @@
         <ul class="categories" :class="getGenderClass()">
           <li class="category" v-for="category in categories" v-bind:key="category.id">
             <div v-if="isCategoryByGender(category)">
-              <img src="../../../assets/gender-categories/bullet-gold.png" v-if="category.id === 0">
-              <img src="../../../assets/gender-categories/bullet-gray.png" v-if="category.id !== 0">
-              <h5 @click="goToProductsByCodeAndGender(category.code, category.description,gender)">{{ category.description }}</h5>
+              <img
+                src="../../../assets/gender-categories/bullet-gold.png"
+                v-if="selectedItemID === category.id"
+              >
+              <img
+                src="../../../assets/gender-categories/bullet-gray.png"
+                v-if="selectedItemID !== category.id"
+              >
+              <h5
+                @click="goToProductsByCodeAndGender(category.id, category.code, category.description, gender)"
+              >{{ category.description }}</h5>
             </div>
           </li>
         </ul>
@@ -63,6 +71,8 @@
 </style>
 
 <script>
+import { setTimeout } from "timers";
+
 export default {
   name: "HomeGenderButtonsComponent",
   components: {},
@@ -132,22 +142,31 @@ export default {
         }
       ],
       gender: "",
+      selectedItemID: -1,
       isOpen: false
     };
   },
   computed: {},
   mounted() {},
   methods: {
-
-    goToProductsByCodeAndGender(category,description,gender){
-        this.$router.push({ name: 'products', params: { category: category, gender: gender, description: description } })
+    goToProductsByCodeAndGender(id, category, description, gender) {
+      this.selectedItemID = id;
+      setTimeout(() => {
+        this.selectedItemID = 0;
+        this.$router.push({
+          name: "products",
+          params: {
+            category: category,
+            gender: gender === "FEMALE" ? "DAMA" : "HOMBRE",
+            description: description
+          }
+        });
+      }, 500);
     },
-
-
 
     closeGenderContent() {
       this.isOpen = false;
-      this.gender = '';
+      this.gender = "";
     },
 
     openGenderContent(gender) {
@@ -163,11 +182,11 @@ export default {
       return this.gender;
     },
 
-    getActiveClassByGender(gender){
-      if(this.gender === gender){
-        return 'active'
-      }else{
-        return 'default'
+    getActiveClassByGender(gender) {
+      if (this.gender === gender) {
+        return "active";
+      } else {
+        return "default";
       }
     },
 
