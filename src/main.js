@@ -13,7 +13,8 @@ import 'firebase/messaging';
 import 'firebase/storage';
 
 // Vue Vendors & PlugIn
-
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import VLazyImagePlugin from 'v-lazy-image';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import VueGeolocation from 'vue-browser-geolocation';
@@ -26,6 +27,7 @@ import './service-workers/registerServiceWorker'
 
 // Vue Install Plug Ins
 Vue.use(Meta);
+Vue.use(VueAxios, axios);
 Vue.use(VueGeolocation);
 Vue.use(VueAwesomeSwiper)
 Vue.use(VLazyImagePlugin);

@@ -1,12 +1,13 @@
 <template>
-  <div class="product-card">
+  <div class="product-card" v-if="isCard">
     <div class="product-wrapper" @click="goToProductView()">
       <div class="isNew" v-if="isNew">NUEVO</div>
-      <img
+
+      <v-lazy-image
         class="photo"
-        :src="card.photos[0].thumb.src.replace('thumbs','thumb')"
-        :alt="card.photos[0].thumb.alt"
-      >
+        :src="card.photos[0].hd.src"
+        :src-placeholder="card.photos[0].thumb.src"
+      />
       <h2 class="price">{{ parseFloat(card.price.COP) | toCurrency}}</h2>
       <h2 class="name">{{ card.description }}</h2>
       <h2 class="color">Color {{ card.color}}</h2>
@@ -14,15 +15,27 @@
   </div>
 </template>
 <script>
+import VLazyImage from "v-lazy-image";
+
 export default {
   name: "ProductCardComponent",
   props: ["card"],
+
+  mounted() {
+    this.$http
+      .get(this.card.photos[0].thumb.src)
+      .then(response => (this.isCard = true))
+      .catch(error => (this.isCard = false));
+  },
   data() {
     return {
-      isNew: false
+      isNew: false,
+      isCard: false
     };
   },
-  components: {},
+  components: {
+    VLazyImage
+  },
   methods: {
     goToProductView() {
       if (this.card) {

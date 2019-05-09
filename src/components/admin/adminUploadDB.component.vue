@@ -62,17 +62,12 @@ export default {
   components: {
     HotTable
   },
-  mounted() {
-    firebase
-      .auth()
-      .signInWithEmailAndPassword("wallamejorge@hotmail.com", "lvosca.inc")
-      .then(response => {})
-      .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-      });
+  beforeMount() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (!(user && user.email && user.email === "jl.mayorga236@gmail.com")) {
+        this.$router.push("/");
+      }
+    });
   },
   data() {
     return {
@@ -107,128 +102,117 @@ export default {
         if (user && user.email) {
           this.db.table.map(async (row, k) => {
             const CODE = row[0];
-            const CATEGORY = row[1];
+            const DESCRIPTION = row[1];
             const COLLECTION = row[2];
+
+            const CATEGORY = row[1];
             const COLOR = row[3];
-            const GENDER = row[4];
+            const GENDER = CODE.toUpperCase()[0] === "D" ? "DAMA" : "HOMBRE";
+            const SIZE_HEIGHT = row[4];
+            const SIZE_WIDTH = row[5];
+            const SIZE_DEPTH = row[6];
+            const SIZES = {
+              height: SIZE_HEIGHT + "",
+              width: SIZE_WIDTH + "",
+              depth: SIZE_DEPTH + ""
+            };
+            const SHORT_NAME = row[7];
+            const CODEBARS = row[8];
 
-            const DESCRIPTION = row[5];
-
-            const PRICE_COP = row[6];
-            const PRICE_USD = row[7];
+            const PRICE_COP = row[9];
+            const PRICE_USD = row[10];
             const PRICES = {
               COP: PRICE_COP,
               USD: PRICE_USD
             };
-            const SIZE_HEIGHT = row[8];
-            const SIZE_WIDTH = row[9];
-            const SIZES = {
-              height: SIZE_HEIGHT,
-              width: SIZE_WIDTH
-            };
-            const PHOTOS = this.getPhotosFromFirebaseStorage(CODE);
 
-            const PRODUCT = {
-              id: CODE,
-              category: CATEGORY,
-              collection: COLLECTION,
-              color: COLOR,
-              description: DESCRIPTION,
-              gender: GENDER,
-              price: PRICES,
-              size: SIZES,
-              photos: PHOTOS,
-              meta: {}
-            };
+            this.getPhotosFromFirebaseStorage(CODE).then(PHOTOS => {
+              const PRODUCT = {
+                id: CODE,
+                name: SHORT_NAME,
+                description: DESCRIPTION,
+                collection: COLLECTION,
 
-            const docRef = dbProducts.doc(PRODUCT.id);
-            console.log(docRef);
+                category: CATEGORY,
+                color: COLOR,
 
-            docRef.get().then(docSnapshot => {
-              if (docSnapshot.exists) {
-                PRODUCT.meta["created"] = docSnapshot.data().meta.created;
-                PRODUCT.meta["updated"] = {
-                  updatedBy: "",
-                  updatedAt: ""
-                };
-                PRODUCT.meta.updated.updatedBy = user.email;
-                PRODUCT.meta.updated.updatedAt = new Date();
+                gender: GENDER,
+                price: PRICES,
+                codebar: CODEBARS,
 
-                console.group("UPDATE");
-                console.warn(PRODUCT.meta);
-                console.groupEnd();
-                docRef
-                  .set(PRODUCT)
-                  .then(function() {
-                    //console.log("Document successfully written!");
-                  })
-                  .catch(function(error) {
-                    //console.error("Error writing document: ", error);
-                  });
-              } else {
-                PRODUCT.meta["updated"] = {
-                  updatedBy: "",
-                  updatedAt: ""
-                };
-                PRODUCT.meta["created"] = {
-                  createdBy: "",
-                  createdAt: ""
-                };
-                PRODUCT.meta.created.createdBy = user.email;
-                PRODUCT.meta.created.createdAt = new Date();
+                size: SIZES,
+                photos: PHOTOS,
+                meta: {}
+              };
 
-                console.group("NEW");
-                console.warn(PRODUCT.meta);
-                console.groupEnd();
+              const docRef = dbProducts.doc(PRODUCT.id);
+              docRef.get().then(docSnapshot => {
+                if (docSnapshot.exists) {
+                  PRODUCT.meta["created"] = docSnapshot.data().meta.created;
+                  PRODUCT.meta["updated"] = {
+                    updatedBy: "",
+                    updatedAt: ""
+                  };
+                  PRODUCT.meta.updated.updatedBy = user.email;
+                  PRODUCT.meta.updated.updatedAt = new Date();
 
-                docRef
-                  .set(PRODUCT)
-                  .then(function() {
-                    //console.log("Document successfully written!");
-                  })
-                  .catch(function(error) {
-                    //console.error("Error writing document: ", error);
-                  });
-              }
+                  docRef
+                    .set(PRODUCT)
+                    .then(function() {
+                      //console.log("Document successfully written!");
+                    })
+                    .catch(function(error) {
+                      //console.error("Error writing document: ", error);
+                    });
+                } else {
+                  PRODUCT.meta["updated"] = {
+                    updatedBy: "",
+                    updatedAt: ""
+                  };
+                  PRODUCT.meta["created"] = {
+                    createdBy: "",
+                    createdAt: ""
+                  };
+                  PRODUCT.meta.created.createdBy = user.email;
+                  PRODUCT.meta.created.createdAt = new Date();
+
+                  docRef
+                    .set(PRODUCT)
+                    .then(function() {
+                      //console.log("Document successfully written!");
+                    })
+                    .catch(function(error) {
+                      //console.error("Error writing document: ", error);
+                    });
+                }
+              });
             });
-
-            /*
-            
-              */
           });
         }
       });
-
-      /*
-      var db = firebase.firestore();
-      db.collection("products")
-        .get()
-        .then(querySnapshot => {
-          this.swiperImages = [];
-          querySnapshot.forEach(doc => {
-            const docData = doc.data();
-            this.swiperImages.push(docData);
-          });
-
-          this.swiperImages.sort((a, b) => a.orderId - b.orderId);
-        });
-    */
     },
     getPhotosFromFirebaseStorage(CODE) {
-      const PHOTOS = [];
-      for (let i = 1; i <= 4; i++) {
-        PHOTOS.push({
-          hd: {
-            alt: `Trianon Colombia. Productos en Cuero. Imagen Alta Resolución Producto ${CODE}`,
-            src: `https://firebasestorage.googleapis.com/v0/b/trianonwebsite.appspot.com/o/products%2Fhd%2F${CODE}-0${i}.jpg?alt=media`
-          },
-          thumb: {
-            alt: `Trianon Colombia. Productos en Cuero. Imagen Baja Resolución Producto ${CODE}`,
-            src: `https://firebasestorage.googleapis.com/v0/b/trianonwebsite.appspot.com/o/products%2Fthumbs%2F${CODE}-0${i}.jpg?alt=media`
-          }
-        });
-      }
-      return PHOTOS;
+      return new Promise((resolve, reject) => {
+        const PHOTOS = [];
+        let counter = 0;
+        for (let i = 1; i <= 5; i++) {
+          const photo_alt = `Trianon Colombia. Productos en 100% Cuero. Producto ${CODE}`;
+          const photoHD_url = `https://firebasestorage.googleapis.com/v0/b/trianonwebsite.appspot.com/o/PRODUCTOS%2FPHOTOS%2FHD%2F${CODE}-0${i}.jpg?alt=media`;
+          const photoTHUMB_url = `https://firebasestorage.googleapis.com/v0/b/trianonwebsite.appspot.com/o/PRODUCTOS%2FPHOTOS%2FTHUMB%2F${CODE}-0${i}.jpg?alt=media`;
+          PHOTOS.push({
+            hd: {
+              alt: photo_alt,
+              src: photoHD_url
+            },
+            thumb: {
+              alt: photo_alt,
+              src: photoTHUMB_url
+            }
+          });
+        }
+
+        resolve(PHOTOS);
+      });
     },
     get_header_row(sheet) {
       var headers = [],
@@ -271,6 +255,7 @@ export default {
       });
       return result;
     },
+
     /** PARSING and DRAGDROP **/
     handleDrop(e) {
       e.stopPropagation();
@@ -301,6 +286,8 @@ export default {
           this.db.codes = this.tickets.map((ticket, index) => index);
           this.db.headers = this.headers;
           this.db.table = ticketsAsArray;
+          console.log("db.headers");
+          console.log(this.db.headers);
           this.isClear = false;
         };
         reader.readAsArrayBuffer(f);
