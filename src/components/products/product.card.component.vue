@@ -22,10 +22,11 @@ export default {
   props: ["card"],
 
   mounted() {
-    this.$http
-      .get(this.card.photos[0].thumb.src)
+    this.$http(
+      "https://firebasestorage.googleapis.com/v0/b/trianonwebsite.appspot.com/o/PRODUCTOS%2FPHOTOS%2FTHUMB%2FDA617-08-01.jpg?alt=media&token=d81c84f7-4e37-443a-89f5-e3cca162eca1"
+    )
       .then(response => (this.isCard = true))
-      .catch(error => (this.isCard = false));
+      .catch(error => console.error(error));
   },
   data() {
     return {
@@ -37,6 +38,9 @@ export default {
     VLazyImage
   },
   methods: {
+    setIsCard() {
+      this.isCard = true;
+    },
     goToProductView() {
       if (this.card) {
         this.$router.push(`/product/id/${this.card.id}`);
