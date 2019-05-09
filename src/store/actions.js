@@ -10,8 +10,15 @@ const addToCart = (context, payload) => {
     context.commit('ADD_TO_CART', payload);
 };
 
+const removeToCart = (context, payload) => {
+    context.commit('REMOVE_FROM_CART', payload);
+};
+
+
 export default {
     updateUser,
     addToCart,
     setView,
+    removeToCart
+
 };

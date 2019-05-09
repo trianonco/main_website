@@ -19,11 +19,20 @@ const ADD_TO_CART = (state, payload) => {
 }
 
 const REMOVE_FROM_CART = (state, payload) => {
+    const item = payload;
+    const itemsWithNoItem = state.cart.items.filter(kItem => kItem.id !== item.id);
+    const itemsWithItem = state.cart.items.filter(kItem => kItem.id === item.id);
+    itemsWithItem.pop();
+
+    const newItems = [...itemsWithNoItem, ...itemsWithItem];
+
+    state.cart.items = newItems;
 
 }
 
 export default {
     UPDATE_USER,
     ADD_TO_CART,
+    REMOVE_FROM_CART,
     SET_VIEW
 };

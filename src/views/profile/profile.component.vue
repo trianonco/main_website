@@ -27,10 +27,15 @@
         <div class="products">
           <ProfileProductCard
             :product="product"
-            v-for="(product, index) of cart.items"
+            :n="cart.items.filter( item => item.id === product.id).length"
+            v-for="(product, index) of cart_items_unique"
             v-bind:key="index"
           ></ProfileProductCard>
         </div>
+
+        <h1>{{ getTotalPrice() | toCurrency }}</h1>
+        <br>
+        <br>
       </div>
       <LoginShareComponent :theme="'gray'"></LoginShareComponent>
     </div>
@@ -56,6 +61,11 @@ export default {
   methods: {
     addItem() {
       this.$router.push("/products");
+    },
+    getTotalPrice() {
+      return this.cart.items
+        .map(item => parseFloat(item.price.COP))
+        .reduce((sum, price) => price + sum);
     }
   },
 
@@ -69,6 +79,9 @@ export default {
   computed: {
     cart() {
       return this.$store.state.cart;
+    },
+    cart_items_unique() {
+      return Array.from(new Set(this.$store.state.cart.items));
     }
   },
 
